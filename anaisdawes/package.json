@@ -1,9 +1,9 @@
 {
-  "name": "my-app",
+  "name": "anaisdawes",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chakra-ui/react": "^2.3.4",
+    "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",

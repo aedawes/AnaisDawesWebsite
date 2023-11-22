@@ -9,7 +9,7 @@ const theme = extendTheme({
             {
               fontFamily: 'Poppins', // Font family name for Poppins
               src: 'url(https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap)',
-              fontWeight: '900', // FontWeight for Poppins
+              fontWeight: 'normal', // FontWeight for Poppins
               fontStyle: 'normal',
             },
             {
