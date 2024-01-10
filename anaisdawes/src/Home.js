@@ -32,6 +32,7 @@ function Home() {
             textAlign='center'
             lineHeight='100%'
             fontSize='18vw'
+            fontFamily='poppins'
             color='blues.205'
             fontStyle='900'> 
             NICE TO MEET YOU 
@@ -43,6 +44,7 @@ function Home() {
               fontSize={{base: '2.5rem', md: '4vw', lg: '4vw'}}
               minWidth='min-content'
               letterSpacing='5px'
+              fontFamily='poppins'
               color='oranges.100'
               textShadow='0.3vw 0.3vw #0B0C21'> 
               Anaïs Dawes 
@@ -51,7 +53,7 @@ function Home() {
               fontSize={{base: '2.5rem', md: '4vw', lg: '4vw'}}
               minWidth='min-content'
               letterSpacing='5px'
-              fontWeight ='600'
+              fontFamily='poppins'
               color='blues.100'> 
               Software Developer 
             </Heading>
@@ -65,6 +67,7 @@ function Home() {
           <Box>
             <Heading
               color='blues.400'
+              fontFamily='poppins'
               p={{ base: '60px', lg: '96px', md: '80px', sm: '60px' }}
               pb='0'
               fontSize={{ base: '2rem', md: '2.2rem', lg: '3rem' }}
@@ -122,13 +125,15 @@ function Home() {
               align="flex-start"
               spacing='2rem'>
               <Heading
-                color='blues.400'>
+                color='blues.400'
+                fontFamily='poppins'>
                 Hello There!
               </Heading>
               <Text
                 color='blues.400'
                 fontSize='1.2rem'
-                w='30rem'>
+                w='30rem'
+                fontFamily='poppins'>
                 I'm a software developer with a love for front-end web development!  Learn more about me by clicking
                 the button below!
               </Text>
@@ -151,6 +156,7 @@ function Home() {
             <HStack>
               <Heading
                 color='blues.400'
+                fontFamily='poppins'
                 py='10rem'
                 px='8rem'
                 fontSize={{ base: '2rem', md: '2.2rem', lg: '3rem' }}
