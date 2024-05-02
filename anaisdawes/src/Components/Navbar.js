@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { Box, Center, Text, HStack, VStack, Image, Link, Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
@@ -7,19 +7,97 @@ function NavBar() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState('');
-    
+    const [isSticky, setIsSticky] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                setIsSticky(true);
+            } else {
+                setIsSticky(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     const toggle = () => {
         setIsMenuOpen(!isMenuOpen);
     };
-      
+
     const handleItemClick = (itemName) => {
         setSelectedItem(itemName);
-      };
+    };
 
     return (
-        <Box>
+        <Box
+            position={isSticky ? 'sticky' : 'absolute'}
+            top='0'
+            w='100vw'
+            px='1.5rem'
+            py='0.2rem'
+            zIndex={2}
+            backgroundColor='#567D91'
+        >
             <Box display={{ base: 'none', lg: 'block' }}>
-                <Center>
+                <HStack justifyContent='space-between'>
+                    <Image h='4rem' src="/mainlogo.png" alt="logo" />
+                    <HStack
+                        justifyContent='space-between'
+                        width='35%'
+                        fontSize='1.5rem'
+                    >
+                        <VStack spacing={0}>
+                            <Link
+                                onClick={() => handleItemClick('Projects')}
+                                _hover={{ color: 'white' }}
+                                color={selectedItem === 'Projects' ? 'blues.400' : 'blues.100'}>
+                                <Text>Projects</Text>
+                            </Link>
+                            {selectedItem === 'Projects' && (
+                                <Image w='5rem' src="./SquigglyLine.png" alt="underline" ml="-0.4" />
+                            )}
+                        </VStack>
+                        <VStack spacing={0}>
+                            <Link
+                                onClick={() => handleItemClick('Contact')}
+                                _hover={{ color: 'white' }}
+                                color={selectedItem === 'Contact' ? 'blues.400' : 'blues.100'}>
+                                <Text>Contact</Text>
+                            </Link>
+                            {selectedItem === 'Contact' && (
+                                <Image w='5rem' src="./SquigglyLine.png" alt="underline" ml="-0.4" />
+                            )}
+                        </VStack>
+                        <VStack spacing={0}>
+                            <Link
+                                onClick={() => handleItemClick('About Me')}
+                                _hover={{ color: 'white' }}
+                                color={selectedItem === 'About Me' ? 'blues.400' : 'blues.100'}>
+                                <Text>About Me</Text>
+                            </Link>
+                            {selectedItem === 'About Me' && (
+                                <Image w='5rem' src="./SquigglyLine.png" alt="underline" ml="-0.4" />
+                            )}
+                        </VStack>
+                        <VStack spacing={0}>
+                            <Link
+                                onClick={() => handleItemClick('Resume')}
+                                _hover={{ color: 'white' }}
+                                color='blues.100'>
+                                <Text>Resume</Text>
+                            </Link>
+                        </VStack>
+                    </HStack>
+                </HStack>
+                <HStack>
+
+                </HStack>
+                {/* <Center>
                     <HStack 
                         pos='absolute' 
                         top='2%' 
@@ -105,7 +183,7 @@ function NavBar() {
                             <MenuItem backgroundColor='blues.100'>Contact</MenuItem>
                         </MenuList>
                     </Menu>
-                </Box>
+                </Box> */}
             </Box>
         </Box>
     );
