@@ -20,7 +20,7 @@ function Home() {
   const projects = listOfProjects();
 
   return (
-    <div className="App">
+    <div className="app">
       <NavBar />
       <Box
         h='fit-content'
@@ -179,80 +179,6 @@ function Home() {
           </HStack>
         </Center>
       </Box>
-      {/* <Box
-        backgroundColor='blues.200'
-        p='150px'
-      >
-        <VStack spacing='6rem'>
-          <HStack
-            spacing='15rem'
-            textAlign='left'
-          >
-            <Image
-              src='/AnaisProfile1.png'
-              alt='Picture of Anais'
-              borderRadius='18px'
-              h='22rem'
-              w='30rem'
-              border='4px solid #0B0C21'
-            />
-            <VStack
-              align="flex-start"
-              spacing='2rem'>
-              <Heading
-                color='blues.400'
-                fontFamily='poppins'>
-                Hello There!
-              </Heading>
-              <Text
-                color='blues.400'
-                fontSize='1.2rem'
-                w='30rem'
-                fontFamily='poppins'>
-                I'm a software developer with a love for front-end web development!  Learn more about me by clicking
-                the button below!
-              </Text>
-              <Button
-                backgroundColor='oranges.100'
-                borderRadius='5rem'
-                borderWidth='0.15rem'
-                borderColor='blues.100'
-                fontSize='0.9rem'
-                w='12rem'
-                h='2rem'>
-                Learn More
-              </Button>
-            </VStack>
-          </HStack>
-        </VStack>
-      </Box>
-      <Center
-        backgroundColor='blues.200'
-        pb='150'
-      >
-        <Box
-          backgroundColor='blues.100'
-          borderRadius='1rem'
-          width='90%'
-        >
-          <HStack>
-            <Heading
-              color='blues.400'
-              fontFamily='poppins'
-              py='10rem'
-              px='8rem'
-              fontSize={{ base: '2rem', md: '2.2rem', lg: '3rem' }}
-              textAlign={{ base: 'center', sm: 'center', md: 'center', lg: 'left' }}>
-              Contact Me
-            </Heading>
-            <VStack spacing='5' px='3rem'>
-              <LinkButton />
-              <LinkButton />
-              <LinkButton />
-            </VStack>
-          </HStack>
-        </Box>
-      </Center> */}
     </div>
   );
 }

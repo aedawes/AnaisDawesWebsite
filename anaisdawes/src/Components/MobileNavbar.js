@@ -5,16 +5,28 @@ import '../CSS/Navbar.css';
 
 function NavBar() {
 
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState('');
 
     useEffect(() => {
-        //set timeout to add opacity class to the squiggle
-        setTimeout(() => {
-            const squiggle = document.getElementsByClassName('squiggle')[0];
-            squiggle.classList.add('opacity');
-            console.log('hi!')
-        }, 100);
-    }, [selectedItem]);
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                setIsSticky(true);
+            } else {
+                setIsSticky(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    const toggle = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
     const handleItemClick = (itemName) => {
         setSelectedItem(itemName);
@@ -25,20 +37,20 @@ function NavBar() {
             <div className="navbar">
                 <img className="logo" src="/mainlogo.png" alt='logo' />
                 <div className="nav-links">
-                    <div className='link-container'>
+                    <div>
                         <a onClick={() => handleItemClick('projects')} href='#' className={selectedItem === 'projects' ? 'nav-link selected' : 'nav-link'}>Projects</a>
                         {selectedItem === 'projects' && (
                             <img src='./SquigglyLine.png' className='squiggle' alt='' />
                         )}
                     </div>
-                    <div className='link-container'>
+                    <div>
                         <a onClick={() => handleItemClick('contact')} href="#" className={selectedItem === 'contact' ? 'nav-link selected' : 'nav-link'}>Contact</a>
                         {selectedItem === 'contact' && (
                             <img src='./SquigglyLine.png' className='squiggle' alt='' />
                         )}
                     </div>
-                    <div className='link-container'>
-                        <a onClick={() => handleItemClick('about')} href="#" className={selectedItem === 'about' ? 'nav-link selected' : 'nav-link'}>About</a>
+                    <div>
+                        <a onClick={() => handleItemClick('about')} href="#" className={selectedItem === 'about' ? 'nav-link selected' : 'nav-link'}>About Me</a>
                         {selectedItem === 'about' && (
                             <img src='./SquigglyLine.png' className='squiggle' alt='' />
                         )}

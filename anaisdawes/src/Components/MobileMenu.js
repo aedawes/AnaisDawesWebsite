@@ -11,7 +11,6 @@ import {
   MenuItem
 } from '@chakra-ui/react'; //imports from Chakra UI
 
-//Navbar component (only renders the nav bar rather than a full page)
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false); //state for the menu
 

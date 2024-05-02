@@ -1,0 +1,61 @@
+.nav {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    padding: 0.2rem 1.5rem;
+    z-index: 2;
+    background-color: #567D91;
+}
+
+.relative {
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 4rem;
+}
+
+.nav-links {
+    display: flex;
+    width: 35rem;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: #0B0C21;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.selected{
+    color: #E6ECF1;
+}
+
+.squiggle {
+    align-self: center;
+    width: 5.3rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #E6ECF1;
+}
+
+.link-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.opacity {
+    opacity: 1;
+}
