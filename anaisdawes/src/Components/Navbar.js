@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import '../CSS/Navbar.css';
 
-function NavBar() {
+function NavBar({ scrollToTarget }) {
 
     const [selectedItem, setSelectedItem] = useState('');
 
@@ -18,6 +18,7 @@ function NavBar() {
 
     const handleItemClick = (itemName) => {
         setSelectedItem(itemName);
+        scrollToTarget();
     };
 
     return (
@@ -26,7 +27,7 @@ function NavBar() {
                 <img className="logo" src="/mainlogo.png" alt='logo' />
                 <div className="nav-links">
                     <div className='link-container'>
-                        <a onClick={() => handleItemClick('projects')} href='#' className={selectedItem === 'projects' ? 'nav-link selected' : 'nav-link'}>Projects</a>
+                        <a href="#" onClick={() => handleItemClick('projects')} className={selectedItem === 'projects' ? 'nav-link selected' : 'nav-link'}>Projects</a>
                         {selectedItem === 'projects' && (
                             <img src='./SquigglyLine.png' className='squiggle' alt='' />
                         )}
@@ -43,7 +44,7 @@ function NavBar() {
                             <img src='./SquigglyLine.png' className='squiggle' alt='' />
                         )}
                     </div>
-                    <div>
+                    <div className='link-container'>
                         <a href="#" class="nav-link">Resume</a>
                     </div>
                 </div>

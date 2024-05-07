@@ -1,0 +1,106 @@
+.app {
+    background-color: #567D91;
+    font-family: poppins;
+}
+
+.introContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92vh;
+    width: 100vw;
+    background-color: #567D91;
+}
+
+.introBackgroundText{
+    font-size: 20vw;
+    line-height: 100%;
+    color: rgba(230, 236, 241, 0.07);
+    font-weight: 700;
+    text-align: center;
+    z-index: 0;
+}
+
+.nameContainer {
+    position: absolute;
+    min-width: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.introName {
+    font-size: 3.5vw;
+    text-shadow: 
+    -1.5px -1.5px 0 #000,  
+     1.5px -1.5px 0 #000,
+    -1.5px  1.5px 0 #000,
+     1.5px  1.5px 0 #000;
+    color: #ED8957;
+}
+
+.introTitle {
+    font-size: 3.5vw;
+    font-weight: 600;
+    color: #0B0C21;
+}
+
+.projectsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    background-color: #0B0C21;
+}
+
+.projectsHeader {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #E6ECF1;
+    margin: 3rem;
+    margin-bottom: 2rem;
+}
+
+.projectsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  align-items: center;
+  margin: 1rem;
+}
+
+.endContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3rem;
+    width: 100vw;
+}
+
+.endSubContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    background-color: #8DA8B8;
+    border-radius: 25px;
+    padding: 1rem;
+}
+
+.aboutMeContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#profilePhoto {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 1rem;
+}
