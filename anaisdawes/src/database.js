@@ -16,14 +16,14 @@ function listOfProjects() {
             description: 'A Swift app that implements the card game of Set. Players will match cards based on color, shape, and number.'
         },
         {
-            image: '/bop.jpeg',
+            image: '/ColorThumbnail.png',
             name: 'Color Palette Generator',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            description: 'A React app that mimicks some of coolers.com\'s features. Focused on vanilla JavaScript and CSS and responsiveness.'
         },
         {
             image: '/bop.jpeg',
             name: 'Recipes App',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            description: 'A Swift app that allows a user to store and read recipes. Focused on implementing MVVM and the basic CRUD operations.'
         },
     ]
 
