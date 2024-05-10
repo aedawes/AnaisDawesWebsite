@@ -75,21 +75,24 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    margin-left: 3rem;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    align-items: stretch;
+    padding: 6rem;
     width: 100%;
 }
 
 .endSubContainer {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #8DA8B8;
     border-radius: 25px;
     padding: 3rem;
+}
+
+#leftSubContainer {
+    margin-right: 6rem;
 }
 
 .aboutMeContainer {
@@ -121,13 +124,12 @@
     font-size: 2rem;
     font-weight: 600;
     color: #0B0C21;
-    margin-bottom: 2.5rem;
-    align-self: flex-start;
+    margin-bottom: 2rem;
 }
 
 .aboutMeTextContainer {
     width: 100%;
-    margin-left: 4rem;
+    margin-left: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

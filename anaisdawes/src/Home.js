@@ -37,7 +37,7 @@ function Home() {
         </div>
       </div>
       <div className='endContainer' ref={projectsRef}>
-        <div className='endSubContainer'>
+        <div id='leftSubContainer' className='endSubContainer'>
           <h1 className='endHeader'>Hello There!</h1>
           <div className='aboutMeContainer'>
             <div className='imageContainer'>
