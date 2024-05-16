@@ -15,26 +15,29 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #E6ECF1;
+    padding: 0.5rem;
 }
 
-.logo {
-    height: 4rem;
+.navLogo {
+    font-size: 1.88rem;
+    font-weight: 600;
 }
 
 .nav-links {
     display: flex;
     width: 35rem;
     justify-content: space-between;
-    font-size: 1.5rem;
+    font-size: 1.44rem;
 }
 
 .nav-link {
-    color: #0B0C21;
+    color: #E6ECF1;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.selected{
+.selected {
     color: #E6ECF1;
 }
 

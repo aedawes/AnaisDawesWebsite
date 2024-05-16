@@ -7,6 +7,8 @@ function NavBar({ scrollToTarget }) {
 
     const [selectedItem, setSelectedItem] = useState('');
 
+    const anaisDawes = '{Anais Dawes}';
+
     // useEffect(() => {
     //     //set timeout to add opacity class to the squiggle
     //     setTimeout(() => {
@@ -24,17 +26,11 @@ function NavBar({ scrollToTarget }) {
     return (
         <div className='nav'>
             <div className="navbar">
-                <img className="logo" src="/mainlogo.png" alt='logo' />
+                <h1 className='navLogo'>{anaisDawes}</h1>
                 <div className="nav-links">
-                    {/* <div className='link-container'>
+                    <div className='link-container'>
                         <a href="#" onClick={() => handleItemClick('projects')} className={selectedItem === 'projects' ? 'nav-link selected' : 'nav-link'}>Projects</a>
                         {selectedItem === 'projects' && (
-                            <img src='./SquigglyLine.png' className='squiggle' alt='' />
-                        )}
-                    </div> */}
-                    <div className='link-container'>
-                        <a onClick={() => handleItemClick('contact')} href="#" className={selectedItem === 'contact' ? 'nav-link selected' : 'nav-link'}>Contact</a>
-                        {selectedItem === 'contact' && (
                             <img src='./SquigglyLine.png' className='squiggle' alt='' />
                         )}
                     </div>
@@ -45,7 +41,16 @@ function NavBar({ scrollToTarget }) {
                         )}
                     </div>
                     <div className='link-container'>
-                        <a href="#" class="nav-link">Resume</a>
+                        <a onClick={() => handleItemClick('resume')} href="#" className={selectedItem === 'contact' ? 'nav-link selected' : 'nav-link'}>Resume</a>
+                        {selectedItem === 'resume' && (
+                            <img src='./SquigglyLine.png' className='squiggle' alt='' />
+                        )}
+                    </div>
+                    <div className='link-container'>
+                        <a onClick={() => handleItemClick('contact')} href="#" className={selectedItem === 'contact' ? 'nav-link selected' : 'nav-link'}>Contact</a>
+                        {selectedItem === 'contact' && (
+                            <img src='./SquigglyLine.png' className='squiggle' alt='' />
+                        )}
                     </div>
                 </div>
             </div>
