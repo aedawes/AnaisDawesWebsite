@@ -3,7 +3,7 @@
     width: 17rem;
     min-width: 15rem;
     border-radius: 18px;
-    background-color: #E6ECF1;
+    background-color: #8DA8B8;
     margin-bottom: 3rem;
     margin-left: 1rem;
     margin-right: 1rem;
@@ -26,6 +26,6 @@
 .projectHeader {
     font-weight: 600;
     font-size: 1.2rem;
-    color: #0B0C21;
+    color: #E6ECF1;
     margin-top: 0.8rem;
 }

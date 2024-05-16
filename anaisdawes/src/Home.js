@@ -36,37 +36,6 @@ function Home() {
           ))}
         </div>
       </div>
-      <div className='endContainer' ref={projectsRef}>
-        <div id='leftSubContainer' className='endSubContainer'>
-          <h1 className='endHeader'>Hello There!</h1>
-          <div className='aboutMeContainer'>
-            <div className='imageContainer'>
-              <img id='profilePhoto' src='/AnaisProfile1.png' />
-            </div>
-            <div className='aboutMeTextContainer'>
-              <p>I’m Anaïs, a software engineer with a love for front-end web development! Learn more about me by clicking the button below!</p>
-              <button className='learnMoreBtn'>Learn More</button>
-            </div>
-          </div>
-        </div>
-        <div className='endSubContainer'>
-          <h1 className='endHeader'>Contact Me</h1>
-          <div className='contactContainer'>
-            <button className='contactBtn'>
-              <p>Email</p>
-              <FontAwesomeIcon icon={faEnvelope} />
-            </button>
-            <button className='contactBtn'>
-              <p>Github</p>
-              <FontAwesomeIcon icon={faGithub} />
-            </button>
-            <button className='contactBtn'>
-              <p>Linkedin</p>
-              <FontAwesomeIcon icon={faLinkedin} />
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
