@@ -13,7 +13,7 @@ function listOfProjects() {
         {
             image: '/SetThumbnail.png',
             name: 'Game of Set',
-            description: 'A Swift app that implements the card game of Set. Players will match cards based on color, shape, and number.'
+            description: 'A mobile Swift app that implements the card game of Set. Players will match cards based on color, shape, and number.'
         },
         {
             image: '/ColorThumbnail.png',
@@ -23,7 +23,7 @@ function listOfProjects() {
         {
             image: '/bop.jpeg',
             name: 'Recipes App',
-            description: 'A Swift app that allows a user to store and read recipes. Focused on implementing MVVM and the basic CRUD operations.'
+            description: 'A mobile Swift app that allows a user to store and read recipes. Focused on implementing MVVM and the basic CRUD operations.'
         },
     ]
 

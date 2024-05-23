@@ -1,13 +1,16 @@
 .card {
+    display: flex;
+    flex-direction: column;
     height: fit-content;
-    width: 17rem;
-    min-width: 15rem;
+    width: 18rem;
+    min-width: 18rem;
     border-radius: 18px;
     background-color: #8DA8B8;
     margin-bottom: 3rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 1.48rem;
+    margin-right: 1.48rem;
     padding: 1.2rem;
+    box-shadow: 0px 5px 4px -3px #787979;
 }
 
 .cardImage {
@@ -20,12 +23,14 @@
     height: 10rem;
     width: 100%;
     border-radius: 18px;
+    border: 1px solid #0B0C21;
     overflow: hidden;
 }
 
 .projectHeader {
     font-weight: 600;
     font-size: 1.2rem;
-    color: #E6ECF1;
-    margin-top: 0.8rem;
+    color: #0B0C21;
+    margin-top: 1.2rem;
+    margin-bottom: 0.2rem;
 }

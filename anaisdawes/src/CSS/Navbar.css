@@ -2,7 +2,6 @@
     position: sticky;
     top: 0;
     width: 100vw;
-    padding: 0.2rem 1.5rem;
     z-index: 2;
     background-color: #567D91;
 }
@@ -16,19 +15,19 @@
     justify-content: space-between;
     align-items: center;
     color: #E6ECF1;
-    padding: 0.5rem;
+    padding: 1.48rem;
 }
 
 .navLogo {
-    font-size: 1.88rem;
+    font-size: calc(0.8rem + 0.9vw);
     font-weight: 600;
 }
 
 .nav-links {
     display: flex;
-    width: 35rem;
+    width: calc(25rem + 7.96vw);
     justify-content: space-between;
-    font-size: 1.44rem;
+    font-size: calc(1rem + 0.48vw);
 }
 
 .nav-link {

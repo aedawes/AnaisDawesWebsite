@@ -8,7 +8,7 @@ import { listOfProjects } from './database';
 import './CSS/Home.css';
 
 function Home() {
-  const projects = listOfProjects();
+  const projects = listOfProjects().slice(0, 4);
   const projectsRef = useRef(null);
 
 
@@ -29,7 +29,8 @@ function Home() {
         </div>
       </div>
       <div className='projectsContainer' ref={projectsRef}>
-        <h1 className='projectsHeader'>My Projects</h1>
+        <h1 className='projectsHeader'>Featured Projects</h1>
+        <hr className='horizontalLine' />
         <div className='projectsGrid'>
           {projects.map((project) => (
             <ProjectCard image={project.image} projectName={project.name} projectDescription={project.description} />
