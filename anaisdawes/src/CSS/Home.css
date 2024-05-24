@@ -37,12 +37,12 @@
 }
 
 .introName {
-    font-size: 3.5vw;
+    font-size: calc(1rem + 2.5vw);
     color: #E6ECF1;
 }
 
 .introTitle {
-    font-size: 3.5vw;
+    font-size: calc(1rem + 2.5vw);
     color: #ED8957;
 }
 
@@ -75,4 +75,19 @@
     justify-content: space-evenly;
     align-items: center;
     margin: 1.48rem;
+    margin-bottom: 0rem;
+}
+
+.seeMoreContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.seeMoreText {
+    font-size: calc(1rem + 0.2vw);
+    color: #0B0C21;
+    margin-right: 0.5rem;
 }

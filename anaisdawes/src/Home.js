@@ -2,10 +2,11 @@ import React, { useRef } from 'react';
 import Navbar from './Components/Navbar.js';
 import ProjectCard from './Components/ProjectCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { listOfProjects } from './database';
 import './CSS/Home.css';
+import Footer from './Components/Footer.js';
 
 function Home() {
   const projects = listOfProjects().slice(0, 4);
@@ -36,7 +37,12 @@ function Home() {
             <ProjectCard image={project.image} projectName={project.name} projectDescription={project.description} />
           ))}
         </div>
+        <div className='seeMoreContainer'>
+          <h2 className='seeMoreText'>See More</h2>
+          <FontAwesomeIcon icon={faArrowRight} />
+        </div>
       </div>
+      <Footer />
     </div>
   );
 }

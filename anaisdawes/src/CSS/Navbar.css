@@ -61,3 +61,24 @@
 .opacity {
     opacity: 1;
 }
+
+.dropdown {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 100vw;
+    background-color: #567D91;
+}
+
+.navItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(230, 236, 241, 0.07);
+    font-size: calc(1rem + 0.2vw);
+    color: #E6ECF1;
+    text-decoration: none;
+    padding: 1.2rem;
+    border-bottom: 1px solid #8DA8B8;
+}

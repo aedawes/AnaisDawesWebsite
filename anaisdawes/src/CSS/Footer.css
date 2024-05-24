@@ -1,0 +1,29 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    background-color: #8DA8B8;
+    color: #0B0C21;
+    font-size: calc(1rem + 0.2vw);
+    box-shadow: inset 0px 2px 8px 2px #849ca9;
+}
+
+.currentlyText {
+    margin: 1.2rem;
+}
+
+.footerLinks {
+    font-size: calc(1rem + 0.7vw);
+}
+
+.contactIcon {
+    margin: 1.2rem;
+}
+
+.footerSmall {
+    justify-content: center;
+    font-size: 1.7rem;
+}
