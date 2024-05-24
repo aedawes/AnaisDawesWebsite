@@ -9,6 +9,7 @@ function NavBar({ scrollToTarget }) {
     const [isMediumWindow, setIsMediumWindow] = useState(false);
     const [isSmallWindow, setIsSmallWindow] = useState(false);
     const [toggleDropdown, setToggleDropdown] = useState(false);
+    const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
     const anaisDawes = (isMediumWindow || isSmallWindow) ? '{AD}' : '{Anais Dawes}';
 
@@ -31,9 +32,18 @@ function NavBar({ scrollToTarget }) {
         };
     }, []);
 
+    useEffect(() => {
+        if (toggleDropdown) {
+            setIsDropdownVisible(true);
+        } else {
+            setTimeout(() => {
+                setIsDropdownVisible(false);
+            }, 3000);
+        }
+    }, [toggleDropdown]);
+
     const handleItemClick = (itemName) => {
         setSelectedItem(itemName);
-        // scrollToTarget();
     };
 
     const handleDropdown = (event) => {
@@ -71,7 +81,7 @@ function NavBar({ scrollToTarget }) {
                                     )}
                                 </div>
                                 <div className='link-container'>
-                                    <a onClick={() => handleItemClick('resume')} href="#" className={selectedItem === 'contact' ? 'nav-link selected' : 'nav-link'}>Resume</a>
+                                    <a onClick={() => handleItemClick('resume')} href="#" className={selectedItem === 'resume' ? 'nav-link selected' : 'nav-link'}>Resume</a>
                                     {selectedItem === 'resume' && (
                                         <img src='./SquigglyLine.png' className='squiggle' alt='' />
                                     )}
@@ -86,8 +96,8 @@ function NavBar({ scrollToTarget }) {
                         </div>
                     )}
             </div>
-            {toggleDropdown && (
-                < div className='dropdown'>
+            {isDropdownVisible && (
+                <div className={`dropdown ${toggleDropdown ? 'open' : 'closed'}`}>
                     <a className="navItem" href='#'>
                         Projects
                     </a>

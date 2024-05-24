@@ -9,7 +9,7 @@ function ProjectCard({ image, projectName, projectDescription }) {
                 </div>
                 <div className='cardContent'>
                     <h1 className='projectHeader'>{projectName}</h1>
-                    <p classname='projectDescription'>{projectDescription}</p>
+                    <p className='projectDescription'>{projectDescription}</p>
                 </div>
             </div>
         </>

@@ -47,10 +47,6 @@
     transition: opacity 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #E6ECF1;
-}
-
 .link-container {
     display: flex;
     flex-direction: column;
@@ -67,7 +63,21 @@
     position: absolute;
     flex-direction: column;
     width: 100vw;
+    height: fit-content;
     background-color: #567D91;
+    overflow: hidden;
+    animation: expand 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.dropdown.open {
+    animation: expand 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.dropdown.closed {
+    animation: expand 0.5s ease-in-out reverse;
+    animation-fill-mode: forwards;
 }
 
 .navItem {
@@ -75,10 +85,29 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    max-height: 0;
     background-color: rgba(230, 236, 241, 0.07);
     font-size: calc(1rem + 0.2vw);
     color: #E6ECF1;
     text-decoration: none;
     padding: 1.2rem;
     border-bottom: 1px solid #8DA8B8;
+}
+
+.navItem:hover {
+    background-color: #8DA8B8;
+}
+
+.nav-link:hover {
+    color: #ED8957;
+}
+
+@keyframes expand {
+    from {
+        max-height: 0;
+    }
+
+    to {
+        max-height: 9.8rem;
+    }
 }

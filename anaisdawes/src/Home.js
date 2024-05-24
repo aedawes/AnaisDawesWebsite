@@ -37,10 +37,10 @@ function Home() {
             <ProjectCard image={project.image} projectName={project.name} projectDescription={project.description} />
           ))}
         </div>
-        <div className='seeMoreContainer'>
+        <a href='#' className='seeMoreContainer'>
           <h2 className='seeMoreText'>See More</h2>
           <FontAwesomeIcon icon={faArrowRight} />
-        </div>
+        </a>
       </div>
       <Footer />
     </div>

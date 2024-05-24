@@ -23,6 +23,7 @@
     z-index: 0;
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
+    animation: fadeIn 3s ease-in-out;
 }
 
 .nameContainer {
@@ -37,13 +38,15 @@
 }
 
 .introName {
-    font-size: calc(1rem + 2.5vw);
+    font-size: calc(1rem + 2.2vw);
     color: #E6ECF1;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .introTitle {
-    font-size: calc(1rem + 2.5vw);
+    font-size: calc(1rem + 2.2vw);
     color: #ED8957;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .projectsContainer {
@@ -52,6 +55,10 @@
     justify-content: center;
     align-items: center;
     width: 100vw;
+    animation: fadeIn 1s ease-in-out;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
 }
 
 .projectsHeader {
@@ -90,4 +97,14 @@
     font-size: calc(1rem + 0.2vw);
     color: #0B0C21;
     margin-right: 0.5rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
