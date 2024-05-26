@@ -81,12 +81,6 @@ function NavBar({ scrollToTarget }) {
                                     )}
                                 </div>
                                 <div className='link-container'>
-                                    <a onClick={() => handleItemClick('resume')} href="#" className={selectedItem === 'resume' ? 'nav-link selected' : 'nav-link'}>Resume</a>
-                                    {selectedItem === 'resume' && (
-                                        <img src='./SquigglyLine.png' className='squiggle' alt='' />
-                                    )}
-                                </div>
-                                <div className='link-container'>
                                     <a onClick={() => handleItemClick('contact')} href="#" className={selectedItem === 'contact' ? 'nav-link selected' : 'nav-link'}>Contact</a>
                                     {selectedItem === 'contact' && (
                                         <img src='./SquigglyLine.png' className='squiggle' alt='' />

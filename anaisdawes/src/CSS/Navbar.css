@@ -25,7 +25,7 @@
 
 .nav-links {
     display: flex;
-    width: calc(25rem + 7.96vw);
+    width: calc(20rem + 5.96vw);
     justify-content: space-between;
     font-size: calc(1rem + 0.48vw);
 }

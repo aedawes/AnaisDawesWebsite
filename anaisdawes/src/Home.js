@@ -4,6 +4,7 @@ import ProjectCard from './Components/ProjectCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { useParallax } from 'react-scroll-parallax';
 import { listOfProjects } from './database';
 import './CSS/Home.css';
 import Footer from './Components/Footer.js';
@@ -18,12 +19,13 @@ function Home() {
       projectsRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  const { ref } = useParallax({ easing: 'linear', scale: [0.9, 1.1] });
 
   return (
     <div className='app'>
       <Navbar scrollToTarget={scrollToTarget} />
       <div className='introContainer'>
-        <h1 className='introBackgroundText'>NICE TO MEET YOU</h1>
+        <h1 ref={ref} className='introBackgroundText'>NICE TO MEET YOU</h1>
         <div className='nameContainer'>
           <h1 className='introName'>Anais Dawes</h1>
           <h2 className='introTitle'>Software Engineer</h2>
