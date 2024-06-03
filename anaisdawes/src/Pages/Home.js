@@ -1,13 +1,12 @@
 import React, { useRef } from 'react';
-import Navbar from './Components/Navbar.js';
-import ProjectCard from './Components/ProjectCard';
+import Navbar from '../Components/Navbar.js';
+import ProjectCard from '../Components/ProjectCard.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { useParallax } from 'react-scroll-parallax';
-import { listOfProjects } from './database';
-import './CSS/Home.css';
-import Footer from './Components/Footer.js';
+import { listOfProjects } from '../database.js';
+import '../CSS/Home.css';
+import Footer from '../Components/Footer.js';
 
 function Home() {
   const projects = listOfProjects().slice(0, 4);
@@ -19,6 +18,7 @@ function Home() {
       projectsRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
   const { ref } = useParallax({ easing: 'linear', scale: [0.9, 1.1] });
 
   return (
@@ -39,7 +39,7 @@ function Home() {
             <ProjectCard image={project.image} projectName={project.name} projectDescription={project.description} />
           ))}
         </div>
-        <a href='#' className='seeMoreContainer'>
+        <a href='/projects' className='seeMoreContainer'>
           <h2 className='seeMoreText'>See More</h2>
           <FontAwesomeIcon icon={faArrowRight} />
         </a>

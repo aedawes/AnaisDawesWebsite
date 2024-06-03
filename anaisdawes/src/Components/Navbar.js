@@ -54,7 +54,7 @@ function NavBar({ scrollToTarget }) {
     return (
         <div className='nav'>
             <div className="navbar">
-                <h1 className='navLogo'>{anaisDawes}</h1>
+                <a href='/' className='navLogo'>{anaisDawes}</a>
                 {isSmallWindow ?
                     (
                         <a href="#" onClick={handleDropdown}>
@@ -69,19 +69,19 @@ function NavBar({ scrollToTarget }) {
                         <div>
                             <div className="nav-links">
                                 <div className='link-container'>
-                                    <a href="#" onClick={() => handleItemClick('projects')} className={selectedItem === 'projects' ? 'nav-link selected' : 'nav-link'}>Projects</a>
+                                    <a href='/projects' onClick={() => handleItemClick('projects')} className={selectedItem === 'projects' ? 'nav-link selected' : 'nav-link'}>Projects</a>
                                     {selectedItem === 'projects' && (
                                         <img src='./SquigglyLine.png' className='squiggle' alt='' />
                                     )}
                                 </div>
                                 <div className='link-container'>
-                                    <a onClick={() => handleItemClick('about')} href="#" className={selectedItem === 'about' ? 'nav-link selected' : 'nav-link'}>About</a>
+                                    <a href='/about' onClick={() => handleItemClick('about')} className={selectedItem === 'about' ? 'nav-link selected' : 'nav-link'}>About</a>
                                     {selectedItem === 'about' && (
                                         <img src='./SquigglyLine.png' className='squiggle' alt='' />
                                     )}
                                 </div>
                                 <div className='link-container'>
-                                    <a onClick={() => handleItemClick('contact')} href="#" className={selectedItem === 'contact' ? 'nav-link selected' : 'nav-link'}>Contact</a>
+                                    <a href='/contact' onClick={() => handleItemClick('contact')} className={selectedItem === 'contact' ? 'nav-link selected' : 'nav-link'}>Contact</a>
                                     {selectedItem === 'contact' && (
                                         <img src='./SquigglyLine.png' className='squiggle' alt='' />
                                     )}
