@@ -1,9 +1,9 @@
 import '../CSS/ProjectCard.css'
 
-function ProjectCard({ image, projectName, projectDescription }) {
+function ProjectCard({ image, path, projectName, projectDescription }) {
     return (
         <>
-            <div className='card'>
+            <a href={path} className='card'>
                 <div className='cardImageContainer'>
                     <img className='cardImage' src={image} alt='' />
                 </div>
@@ -11,7 +11,7 @@ function ProjectCard({ image, projectName, projectDescription }) {
                     <h1 className='projectHeader'>{projectName}</h1>
                     <p className='projectDescription'>{projectDescription}</p>
                 </div>
-            </div>
+            </a>
         </>
     );
 }

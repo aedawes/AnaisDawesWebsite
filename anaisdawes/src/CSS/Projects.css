@@ -1,0 +1,19 @@
+.pageContent {
+    flex: 1;
+    padding: 4rem;
+}
+
+.projectsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr));
+    margin-top: 1.8rem;
+}
+
+.pageHeader {
+    font-size: calc(1rem + 0.8vw);
+    font-weight: 600;
+}
+
+.pageSubheader {
+    font-size: calc(1rem + 0.2vw);
+}

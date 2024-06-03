@@ -31,12 +31,12 @@ function Home() {
           <h2 className='introTitle'>Software Engineer</h2>
         </div>
       </div>
-      <div className='projectsContainer' ref={projectsRef}>
+      <div className='recentProjectsContainer' ref={projectsRef}>
         <h1 className='projectsHeader'>Featured Projects</h1>
         <hr className='horizontalLine' />
         <div className='projectsGrid'>
           {projects.map((project) => (
-            <ProjectCard image={project.image} projectName={project.name} projectDescription={project.description} />
+            <ProjectCard image={project.image} path={project.path} projectName={project.name} projectDescription={project.description} />
           ))}
         </div>
         <a href='/projects' className='seeMoreContainer'>

@@ -1,6 +1,14 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 .app {
+    display: flex;
+    flex-direction: column;
     background-color: #E6ECF1;
     font-family: poppins;
+    min-height: 100vh;
 }
 
 .introContainer {
@@ -49,7 +57,7 @@
     animation: fadeIn 1s ease-in-out;
 }
 
-.projectsContainer {
+.recentProjectsContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
