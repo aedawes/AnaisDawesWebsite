@@ -1,63 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from '../../Components/Navbar.js';
-import '../../CSS/Projects.css';
-import Footer from '../../Components/Footer.js';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import Project from '../../Components/Project.js';
 
 function ColorPalette() {
-    const [isSmallWindow, setIsSmallWindow] = useState(false);
-
-    const navigate = useNavigate();
-
-    const handleClick = () => {
-        navigate('/projects');
-    };
-
-    useEffect(() => {
-        function isWindowSize(size) {
-            return window.innerWidth <= size;
-        }
-
-        function handleResize() {
-            setIsSmallWindow(isWindowSize(860));
-        }
-
-        window.addEventListener('resize', handleResize);
-
-        handleResize();
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
 
     return (
-        <div className='app'>
-            <Navbar />
-            <div className='pageContent projectContent'>
-                <div className='innerContent'>
-                    <h1 className='pageHeader'>Avengineers</h1>
-                    <h2 className='pageSubheader'>Capstone project sponsered by Marvel and Disney StudioLAB</h2>
-                    <div className={`projectDescriptionContainer ${isSmallWindow ? 'column' : ''}`}>
-                        <div className='projectImageContainer'>
-                            <img className='projectImage' src='/AvengineersThumbnail.png' alt='Avengineers' />
-                        </div>
-                        <p className='projectFullDescription'>
-                            The goal of this project was to complete a prototype of a telepresence robot, imaginged with user stories, to provide
-                            a more smooth process for creating movies. We worked as two teams of 5 and 6, one working on software (my team) and the other
-                            on hardware. As the lead for the software aspect of the project and because of the satisfaction of our sponsors, my name was put on
-                            a patent as an inventor.
-                        </p>
-                    </div>
-                    <div className='skillsContainer'>
-                        <h3 className='skillsHeader'>Skills</h3>
-                        <p className='skills'>Python  •  C#  •  Team collaboration  •  AWS Cloud  •  Networking</p>
-                    </div>
-                    <h3 className='linkReplacement'>Due to the nature of this project (NDA), a demo or further images are not available</h3>
-                    <button onClick={handleClick} className='backbutton'>See All Projects</button>
-                </div>
-            </div>
-            <Footer />
+        <div>
+            <Project
+                link={null}
+                title='Color Palette Generator'
+                subtitle='A mock site based off of Coolers.com that generates color palettes'
+                image='/ColorThumbnail.png'
+                imageAlt='Color Palette homepage'
+                description={
+                    <p className='projectFullDescription'>
+                        This was a personal project to put my React and CSS skills to the test. I took a look at the inspiration site that I often use to generate
+                        the colors for all my sites and I implemented a similar site with a few changes. The main features include a dark mode toggle, a random color
+                        generator with the ability to adjust, lock, and move colors, and a contrast generator to ensure that the colors are accessible. <br />
+                    </p>
+                }
+                skills='React  •  HTML/CSS  •  CSS Animations  •  Javascript'
+                githubLink='https://github.com/aedawes/colors'
+            />
         </div>
     );
 }

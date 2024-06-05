@@ -21,7 +21,7 @@ function App() {
             <Route path='/contact' element={<Contact />} />
             <Route path='/projects/avengineers' element={<Avengineers />} />
             <Route path='/projects/blazzi' element={<Blazzi />} />
-            <Route path='/projects/color-palette' element={<ColorPalette />} />
+            <Route path='/projects/colorpalette' element={<ColorPalette />} />
             <Route path='/projects/set' element={<Set />} />
           </Routes>
         </ParallaxProvider>
