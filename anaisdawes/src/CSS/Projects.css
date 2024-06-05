@@ -1,12 +1,19 @@
 .pageContent {
     flex: 1;
     padding: 4rem;
+    max-width: 100vw;
 }
 
 .projectsContainer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr));
-    margin-top: 1.8rem;
+}
+
+.innerContent {
+    width: 70rem;
+    max-width: 90vw;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .pageHeader {
@@ -16,4 +23,92 @@
 
 .pageSubheader {
     font-size: calc(1rem + 0.2vw);
+    font-weight: 500;
+    margin-bottom: 1.8rem;
+}
+
+.projectContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projectDescriptionContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.8rem;
+    width: 100%;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.projectImageContainer {
+    height: 14rem;
+    width: 30rem;
+    max-height: 10rem;
+    max-width: 17rem;
+    margin-right: 1.8rem;
+    margin-bottom: 1.8rem;
+    border-radius: 18px;
+    border: 1px solid #0B0C21;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.projectFullDescription {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 1.8rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.skillsHeader {
+    font-size: calc(1rem + 0.2vw);
+    font-weight: 600;
+}
+
+.skills {
+    font-size: 1rem;
+    margin-top: 0.4rem;
+}
+
+.linkReplacement {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1.8rem;
+}
+
+.buttonContainer {
+    margin-top: 1.8rem;
+}
+
+.linkButton {
+    width: 100%;
+    max-width: 90vw;
+    margin-bottom: 0.8rem;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    font-weight: 500;
+    background-color: #ED8957;
+    text-align: center;
+}
+
+.backbutton {
+    width: 100%;
+    max-width: 90vw;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    font-weight: 500;
+    background-color: #A1B6C2;
+    text-align: center;
 }

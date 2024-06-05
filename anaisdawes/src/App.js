@@ -4,6 +4,10 @@ import Home from './Pages/Home';
 import Projects from './Pages/Projects';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
+import Avengineers from './Pages/Projects/Avengineers';
+import Blazzi from './Pages/Projects/Blazzi';
+import ColorPalette from './Pages/Projects/ColorPalette';
+import Set from './Pages/Projects/Set';
 
 function App() {
   return (
@@ -15,6 +19,10 @@ function App() {
             <Route path='/projects' element={<Projects />} />
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
+            <Route path='/projects/avengineers' element={<Avengineers />} />
+            <Route path='/projects/blazzi' element={<Blazzi />} />
+            <Route path='/projects/color-palette' element={<ColorPalette />} />
+            <Route path='/projects/set' element={<Set />} />
           </Routes>
         </ParallaxProvider>
       </div>
