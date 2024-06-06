@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../Components/Navbar.js';
 import '../CSS/About.css';
 import Footer from '../Components/Footer.js';
+import ImageSelector from '../Components/ImageSelector.js';
 
 function About() {
     const [isSmallWindow, setIsSmallWindow] = useState(false);
+    const [selectedImage, setSelectedImage] = useState('/AnaisProfile.png');
 
     useEffect(() => {
         function isWindowSize(size) {
@@ -12,7 +14,7 @@ function About() {
         }
 
         function handleResize() {
-            setIsSmallWindow(isWindowSize(718));
+            setIsSmallWindow(isWindowSize(860));
         }
 
         window.addEventListener('resize', handleResize);
@@ -23,6 +25,10 @@ function About() {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
+    const handleImageSelection = (image) => {
+        setSelectedImage(image);
+    }
 
     return (
         <div className='app'>
@@ -42,9 +48,19 @@ function About() {
                                     thrive on solving complex problems and the satisfaction of seeing my work come to life through effective and efficient code!
                                 </p>
                             </div>
-                            <div className={`introductionImageContainer ${isSmallWindow ? 'extraTopPadding' : ''}`}>
-                                <img className='introductionImage' src='/AnaisProfile.png' alt='Anais Dawes' />
+                            <div className='vertical'>
+                                <div className={`introductionImageContainer ${isSmallWindow ? 'extraTopPadding' : ''}`}>
+                                    <img className='introductionImage' src={selectedImage} alt='Anais Dawes' />
+                                </div>
                             </div>
+                        </div>
+                        <div className={`imageSelectionContainer sectionContentContainer ${isSmallWindow ? 'hidden' : ''}`}>
+                            <ImageSelector image='/AnaisProfile.png' imageAlt='Professional picture of Anais' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
+                            <ImageSelector image='/graduation.png' imageAlt='Anais in her graduation gear' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
+                            <ImageSelector image='/disneyBathroom.png' imageAlt='Anais taking a mirror selfie' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
+                            <ImageSelector image='/greece.png' imageAlt='Anais in Greece' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
+                            <ImageSelector image='/flowers.png' imageAlt='Anais with flowers' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
+                            <ImageSelector image='/anaisWithJuice.png' imageAlt='Baby Anais drinking juice' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
                         </div>
                     </div>
                 </div>
