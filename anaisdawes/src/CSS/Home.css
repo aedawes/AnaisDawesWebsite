@@ -33,6 +33,7 @@ html, body {
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
     animation: fadeIn 3s ease-in-out;
+    cursor: default;
 }
 
 .nameContainer {
