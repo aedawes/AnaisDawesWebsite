@@ -17,7 +17,7 @@
 }
 
 .pageHeader {
-    font-size: calc(1rem + 0.8vw);
+    font-size: calc(1.5rem + 0.2vw);
     font-weight: 600;
 }
 
@@ -122,4 +122,11 @@
     height: 100%;
     background-color: #1E1E1E;
     border-radius: 0.4rem;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

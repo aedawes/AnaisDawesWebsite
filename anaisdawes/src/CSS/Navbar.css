@@ -25,9 +25,9 @@
 
 .nav-links {
     display: flex;
-    width: calc(20rem + 5.96vw);
+    width: calc(15rem + 5.96vw);
     justify-content: space-between;
-    font-size: calc(1rem + 0.48vw);
+    font-size: calc(1rem + 0.2vw);
 }
 
 .nav-link {
