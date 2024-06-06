@@ -6,7 +6,8 @@ function Set() {
     return (
         <div>
             <Project
-                link='https://medium.com/@beccablazzreese/blazzi-finding-the-perfect-nail-technician-has-never-been-easier-0dcb18024f7a'
+                link={null}
+                demoRoute='/projects/SetDemo'
                 title='Set'
                 subtitle='A Swift mobile app that implements the card game titled "Set"'
                 image='/SetThumbnail.png'
@@ -21,6 +22,7 @@ function Set() {
                     </p>
                 }
                 skills='Swift  •  SwiftUI  •  XCode  •  MVVM'
+                githubLink='https://github.com/aedawes/set-game'
             />
         </div>
     );

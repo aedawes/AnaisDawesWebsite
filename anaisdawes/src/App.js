@@ -8,6 +8,9 @@ import Avengineers from './Pages/Projects/Avengineers';
 import Blazzi from './Pages/Projects/Blazzi';
 import ColorPalette from './Pages/Projects/ColorPalette';
 import Set from './Pages/Projects/Set';
+import Recipe from './Pages/Projects/Recipe';
+import SetDemo from './Pages/Projects/ProjectDemos/SetDemo';
+import RecipeDemo from './Pages/Projects/ProjectDemos/RecipeDemo';
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
             <Route path='/projects/blazzi' element={<Blazzi />} />
             <Route path='/projects/colorpalette' element={<ColorPalette />} />
             <Route path='/projects/set' element={<Set />} />
+            <Route path='/projects/recipe' element={<Recipe />} />
+            <Route path='/projects/SetDemo' element={<SetDemo />} />
+            <Route path='/projects/RecipeDemo' element={<RecipeDemo />} />
           </Routes>
         </ParallaxProvider>
       </div>

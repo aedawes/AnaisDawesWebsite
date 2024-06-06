@@ -4,7 +4,7 @@ import '../CSS/Projects.css';
 import Footer from './Footer.js';
 import { useNavigate } from 'react-router-dom';
 
-function Project({ link, title, subtitle, image, imageAlt, description, skills, githubLink }) {
+function Project({ link, demoRoute, title, subtitle, image, imageAlt, description, skills, githubLink }) {
     const [isSmallWindow, setIsSmallWindow] = useState(false);
 
     const navigate = useNavigate();
@@ -32,8 +32,8 @@ function Project({ link, title, subtitle, image, imageAlt, description, skills, 
         window.open(urlLink, '_blank');
     };
 
-    const handleNavigation = () => {
-        navigate(projectsEndpoint);
+    const handleNavigation = (navEndpoint) => {
+        navigate(navEndpoint);
     };
 
 
@@ -54,11 +54,12 @@ function Project({ link, title, subtitle, image, imageAlt, description, skills, 
                         <h3 className='skillsHeader'>Skills</h3>
                         <p className='skills'>{skills}</p>
                     </div>
-                    {link ? null : <h3 className='linkReplacement'>Due to the nature of this project (NDA), a demo or further images are not available</h3>}
+                    {(link || demoRoute) ? null : <h3 className='linkReplacement'>Due to the nature of this project (NDA), a demo or further images are not available</h3>}
                     <div className='buttonContainer'>
                         {link ? <button onClick={() => handleLink(link)} className='linkButton'>See Demo</button> : null}
+                        {demoRoute ? <button onClick={() => handleNavigation(demoRoute)} className='linkButton'>See Demo</button> : null}
                         {githubLink ? <button onClick={() => handleLink(githubLink)} className='linkButton'>View in Github</button> : null}
-                        <button onClick={handleNavigation} className='backbutton'>See All Projects</button>
+                        <button onClick={() => handleNavigation(projectsEndpoint)} className='backbutton'>See All Projects</button>
                     </div>
                 </div>
             </div>

@@ -22,12 +22,12 @@ function listOfProjects() {
             image: '/ColorThumbnail.png',
             path: '/projects/colorpalette',
             name: 'Color Palette Generator',
-            description: 'A React app that mimicks some of coolers.com\'s features. Focused on vanilla JavaScript and CSS and responsiveness.'
+            description: 'A React app that mimicks some of coolers.com\'s features. Focused on vanilla JavaScript,CSS, and responsiveness.'
         },
         {
-            image: '/bop.jpeg',
-            path: '/projects/bop',
-            name: 'Recipes App',
+            image: '/recipeThumbnail.png',
+            path: '/projects/recipe',
+            name: 'Recipe App',
             description: 'A mobile Swift app that allows a user to store and read recipes. Focused on implementing MVVM and the basic CRUD operations.'
         },
     ]

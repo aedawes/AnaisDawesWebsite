@@ -6,7 +6,7 @@ function ColorPalette() {
     return (
         <div>
             <Project
-                link={null}
+                link='https://colorPalette.anaisdawes.com'
                 title='Color Palette Generator'
                 subtitle='A mock site based off of Coolers.com that generates color palettes'
                 image='/ColorThumbnail.png'

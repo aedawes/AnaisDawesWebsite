@@ -106,9 +106,20 @@
 .backbutton {
     width: 100%;
     max-width: 90vw;
+    margin-bottom: 0.8rem;
     padding: 0.5rem;
     border-radius: 0.4rem;
     font-weight: 500;
     background-color: #A1B6C2;
     text-align: center;
+}
+
+.demoVideo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #1E1E1E;
+    border-radius: 0.4rem;
 }
