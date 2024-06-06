@@ -4,7 +4,7 @@
     height: fit-content;
     width: 18rem;
     min-width: 18rem;
-    border-radius: 18px;
+    border-radius: 12px;
     background-color: #8DA8B8;
     margin-bottom: 3rem;
     padding: 1.2rem;
@@ -20,7 +20,7 @@
 .cardImageContainer {
     height: 10rem;
     width: 100%;
-    border-radius: 18px;
+    border-radius: 12px;
     border: 1px solid #0B0C21;
     overflow: hidden;
 }
