@@ -3,10 +3,13 @@ import Navbar from '../Components/Navbar.js';
 import '../CSS/About.css';
 import Footer from '../Components/Footer.js';
 import ImageSelector from '../Components/ImageSelector.js';
+import { useNavigate } from 'react-router-dom';
 
 function About() {
     const [isSmallWindow, setIsSmallWindow] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/AnaisProfile.png');
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         function isWindowSize(size) {
@@ -29,6 +32,15 @@ function About() {
     const handleImageSelection = (image) => {
         setSelectedImage(image);
     }
+
+    const handleDownload = () => {
+        const url = '/Resume.pdf';
+        window.open(url, '_blank');
+    };
+
+    const handleNavigation = (navEndpoint) => {
+        navigate(navEndpoint);
+    };
 
     return (
         <div className='app'>
@@ -71,7 +83,7 @@ function About() {
                         <div className='sectionContentContainer'>
                             <div className={`resumeHeaderContainer ${isSmallWindow ? 'vertical' : ''}`}>
                                 <h1 className='resumeHeader'>Experience</h1>
-                                <button className='resumeButton'>Download Resume</button>
+                                <button className='resumeButton' onClick={handleDownload}>Download Resume</button>
                             </div>
                             <div className='fullWidthHorizontalLine' />
                             <div className='subsectionContainer'>
@@ -82,7 +94,7 @@ function About() {
                                         Led a team of five developers in frontend UI/UX development for a React Native app targeted towards the
                                         beauty industry. This project was undertaken as part of a year-long master's program.
                                     </p>
-                                    <button className='resumeButton'>View Project</button>
+                                    <button className='resumeButton' onClick={() => handleNavigation('/projects/blazzi')}>View Project</button>
                                 </div>
                                 <div className='indent'>
                                     <h4 className='resumeSubsubheader'>Disney Studio LAB - Software Engineer - 2023</h4>
@@ -91,7 +103,7 @@ function About() {
                                         the networking and coding components of the project, contributing to it’s successful implementation. Nominated by my team
                                         to be listed as an inventor on a patent application resulting from the project’s innovation.
                                     </p>
-                                    <button className='resumeButton'>View Project</button>
+                                    <button className='resumeButton' onClick={() => handleNavigation('/projects/avengineers')}>View Project</button>
                                 </div>
                             </div>
                             <div className='subsectionContainer'>
@@ -103,7 +115,7 @@ function About() {
                                         <li>BYU IT - Database TA</li>
                                         <li>BYU Cybersecurity Research Lab - Website manager</li>
                                     </ul>
-                                    <button className='resumeButton'>See more in my resume</button>
+                                    <button className='resumeButton' onClick={handleDownload}>See more in my resume</button>
                                 </div>
                             </div>
                         </div>
