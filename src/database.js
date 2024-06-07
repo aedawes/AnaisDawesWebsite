@@ -10,7 +10,7 @@ function listOfProjects() {
             image: '/BlazziThumbnail.png',
             path: '/projects/blazzi',
             name: 'Blazzi',
-            description: 'A app designed and built for new estiticians to be able to build a client base and for clients to filter for individual estiticians.'
+            description: 'A app designed and built for new estheticians to be able to build a client base and for clients to filter for individual estheticians.'
         },
         {
             image: '/SetThumbnail.png',
@@ -22,7 +22,7 @@ function listOfProjects() {
             image: '/ColorThumbnail.png',
             path: '/projects/colorpalette',
             name: 'Color Palette Generator',
-            description: 'A React app that mimicks some of coolers.com\'s features. Focused on vanilla JavaScript,CSS, and responsiveness.'
+            description: 'A React app that mimicks some of coolers.com\'s features. Focused on vanilla JavaScript, CSS, and responsiveness.'
         },
         {
             image: '/recipeThumbnail.png',

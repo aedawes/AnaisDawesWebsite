@@ -32,7 +32,7 @@ function Recipe() {
                 imageAlt='Image of Recipe app'
                 description={
                     <p className='projectFullDescription'>
-                        This was a personal project to learn Swift UI and implement all four CRUD operations within an IOS app. This is a recipe app
+                        This was a personal project to learn Swift UI and implement all four CRUD operations within an ios app. This is a recipe app
                         that allows users to add recipes, view existing recipes, edit their recipes, and delete recipes. The app uses a mock database to store
                         the recipes rather than a real database for the sake of resources and simplicity. <br />
                         <br />
