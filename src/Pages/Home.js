@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '../Components/Navbar.js';
 import ProjectCard from '../Components/ProjectCard.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,8 +9,27 @@ import '../CSS/Home.css';
 import Footer from '../Components/Footer.js';
 
 function Home() {
+  const [isSmallWindow, setIsSmallWindow] = useState(false);
   const projects = listOfProjects().slice(0, 4);
   const projectsRef = useRef(null);
+
+  useEffect(() => {
+    function isWindowSize(size) {
+      return window.innerWidth <= size;
+    }
+
+    function handleResize() {
+      setIsSmallWindow(isWindowSize(718));
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
 
   const scrollToTarget = () => {
@@ -25,7 +44,7 @@ function Home() {
     <div className='app'>
       <Navbar scrollToTarget={scrollToTarget} />
       <div className='introContainer'>
-        <h1 ref={ref} className='introBackgroundText'>NICE TO MEET YOU</h1>
+        <h1 ref={ref} className={`introBackgroundText ${isSmallWindow ? 'noShow' : ''}`}>NICE TO MEET YOU</h1>
         <div className='nameContainer'>
           <h1 className='introName'>Anais Dawes</h1>
           <h2 className='introTitle'>Software Engineer</h2>

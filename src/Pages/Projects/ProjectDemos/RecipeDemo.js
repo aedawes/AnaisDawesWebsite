@@ -22,7 +22,7 @@ function RecipeDemo() {
                     <h2 className='pageSubheader'>View the video to see a demo of the recipe app</h2>
                     <div className='demoVideo'>
                         <video controls>
-                            <source src='/recipeDemo.mp4' type='video/mp4' />
+                            <source src='https://anaisdawes-website-videos.s3.amazonaws.com/recipeDemo.mp4' type='video/mp4' />
                             Your browser does not support this video.
                         </video>
                     </div>

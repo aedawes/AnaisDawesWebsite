@@ -47,13 +47,13 @@ html, body {
 }
 
 .introName {
-    font-size: calc(1rem + 2.2vw);
+    font-size: calc(2rem + 1.2vw);
     color: #E6ECF1;
     animation: fadeIn 1s ease-in-out;
 }
 
 .introTitle {
-    font-size: calc(1rem + 2.2vw);
+    font-size: calc(2rem + 1.2vw);
     color: #ED8957;
     animation: fadeIn 1s ease-in-out;
 }
@@ -107,6 +107,11 @@ html, body {
     font-size: calc(1rem + 0.2vw);
     color: #0B0C21;
     margin-right: 0.5rem;
+}
+
+.noShow {
+    opacity: 0;
+    animation: none;
 }
 
 @keyframes fadeIn {
