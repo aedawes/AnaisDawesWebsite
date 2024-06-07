@@ -1,12 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '../../../Components/Navbar.js';
 import '../../../CSS/Projects.css';
 import Footer from '../../../Components/Footer.js';
+import LoadingModal from '../../../Components/LoadingModal.js';
 import { useNavigate } from 'react-router-dom';
 
 function RecipeDemo() {
+    const [loading, setLoading] = useState(true);
+    const videoRef = useRef();
 
     const navigate = useNavigate();
+    const video = 'https://anaisdawes-website-videos.s3.amazonaws.com/recipeDemo.mp4';
+
+    useEffect(() => {
+
+        const handleVideoLoad = () => {
+            setLoading(false);
+        };
+
+        if (videoRef.current) {
+            videoRef.current.onloadedmetadata = handleVideoLoad;
+            videoRef.current.onerror = handleVideoLoad;
+        }
+    }, [video]);
 
     const handleNavigation = (navEndpoint) => {
         navigate(navEndpoint);
@@ -15,14 +31,15 @@ function RecipeDemo() {
 
     return (
         <div className='app'>
+            {loading && <LoadingModal />}
             <Navbar />
             <div className='pageContent projectContent'>
                 <div className='innerContent'>
                     <h1 className='pageHeader'>Recipe Demo</h1>
                     <h2 className='pageSubheader'>View the video to see a demo of the recipe app</h2>
                     <div className='demoVideo'>
-                        <video controls>
-                            <source src='https://anaisdawes-website-videos.s3.amazonaws.com/recipeDemo.mp4' type='video/mp4' />
+                        <video ref={videoRef} controls>
+                            <source src={video} type='video/mp4' />
                             Your browser does not support this video.
                         </video>
                     </div>

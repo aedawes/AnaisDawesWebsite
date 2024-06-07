@@ -1,15 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Project from '../../Components/Project.js';
+import LoadingModal from '../../Components/LoadingModal.js';
 
 function ColorPalette() {
 
+    const [loading, setLoading] = useState(true);
+
+    const image = '/ColorThumbnail.png';
+
+    useEffect(() => {
+
+        const handleImageLoad = () => {
+            setLoading(false);
+        };
+
+        const img = new Image();
+        img.src = image;
+        img.onload = handleImageLoad;
+        img.onerror = handleImageLoad;
+    }, [image]);
+
     return (
         <div>
+            {loading && <LoadingModal />}
             <Project
                 link='https://colorpalette.anaisdawes.com'
                 title='Color Palette Generator'
                 subtitle='A mock site based off of Coolers.com that generates color palettes'
-                image='/ColorThumbnail.png'
+                image={image}
                 imageAlt='Color Palette homepage'
                 description={
                     <p className='projectFullDescription'>

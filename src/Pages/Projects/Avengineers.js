@@ -1,15 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Project from '../../Components/Project.js';
+import LoadingModal from '../../Components/LoadingModal.js';
 
 function Avengineers() {
+    const [loading, setLoading] = useState(true);
+
+    const image = '/AvengineersThumbnail.png';
+
+    useEffect(() => {
+
+        const handleImageLoad = () => {
+            setLoading(false);
+        };
+
+        const img = new Image();
+        img.src = image;
+        img.onload = handleImageLoad;
+        img.onerror = handleImageLoad;
+    }, [image]);
 
     return (
         <div>
+            {loading && <LoadingModal />}
             <Project
                 link={null}
                 title='Avengineers'
                 subtitle='Capstone project sponsered by Marvel and Disney StudioLAB'
-                image='/AvengineersThumbnail.png'
+                image={image}
                 imageAlt='Avengineers Logo'
                 description={
                     <p className='projectFullDescription'>

@@ -1,16 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Project from '../../Components/Project.js';
+import LoadingModal from '../../Components/LoadingModal.js';
 
 function Set() {
 
+    const [loading, setLoading] = useState(true);
+
+    const image = '/SetThumbnail.png';
+
+    useEffect(() => {
+
+        const handleImageLoad = () => {
+            setLoading(false);
+        };
+
+        const img = new Image();
+        img.src = image;
+        img.onload = handleImageLoad;
+        img.onerror = handleImageLoad;
+    }, [image]);
+
     return (
         <div>
+            {loading && <LoadingModal />}
             <Project
                 link={null}
                 demoRoute='/projects/SetDemo'
                 title='Set'
                 subtitle='A Swift mobile app that implements the card game titled "Set"'
-                image='/SetThumbnail.png'
+                image={image}
                 imageAlt='Image of Set app'
                 description={
                     <p className='projectFullDescription'>

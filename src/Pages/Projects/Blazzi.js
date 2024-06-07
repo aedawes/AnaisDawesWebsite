@@ -1,15 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Project from '../../Components/Project.js';
+import LoadingModal from '../../Components/LoadingModal.js';
 
 function Blazzi() {
 
+    const [loading, setLoading] = useState(true);
+
+    const image = '/BlazziThumbnail.png';
+
+    useEffect(() => {
+
+        const handleImageLoad = () => {
+            setLoading(false);
+        };
+
+        const img = new Image();
+        img.src = image;
+        img.onload = handleImageLoad;
+        img.onerror = handleImageLoad;
+    }, [image]);
+
     return (
         <div>
+            {loading && <LoadingModal />}
             <Project
                 link='https://medium.com/@beccablazzreese/blazzi-finding-the-perfect-nail-technician-has-never-been-easier-0dcb18024f7a'
                 title='Blazzi'
                 subtitle='Masters capstone project for BYU MISM program'
-                image='/BlazziThumbnail.png'
+                image={image}
                 imageAlt='Blazzi Logo'
                 description={
                     <p className='projectFullDescription'>

@@ -4,9 +4,12 @@ import '../CSS/Projects.css';
 import Footer from '../Components/Footer.js';
 import { listOfProjects } from '../database.js';
 import ProjectCard from '../Components/ProjectCard.js';
+import LoadingModal from '../Components/LoadingModal.js';
 
 function Projects() {
     const [isSmallWindow, setIsSmallWindow] = useState(false);
+    const [loading, setLoading] = useState(true);
+
     const projects = listOfProjects()
 
     useEffect(() => {
@@ -27,8 +30,32 @@ function Projects() {
         };
     }, []);
 
+    useEffect(() => {
+        if (projects.length === 0) {
+            setLoading(false);
+            return;
+        }
+
+        let imagesLoadedCount = 0;
+
+        const handleImageLoad = () => {
+            imagesLoadedCount += 1;
+            if (imagesLoadedCount === projects.length) {
+                setLoading(false);
+            }
+        };
+
+        projects.forEach((project) => {
+            const img = new Image();
+            img.src = project.image;
+            img.onload = handleImageLoad;
+            img.onerror = handleImageLoad;
+        });
+    }, [projects]);
+
     return (
         <div className='app'>
+            {loading && <LoadingModal />}
             <Navbar />
             <div className={`pageContent ${isSmallWindow ? 'center' : ''}`}>
                 <h1 className='pageHeader'>Projects</h1>

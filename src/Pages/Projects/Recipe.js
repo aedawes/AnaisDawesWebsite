@@ -1,16 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Project from '../../Components/Project.js';
+import LoadingModal from '../../Components/LoadingModal.js';
 
 function Recipe() {
 
+    const [loading, setLoading] = useState(true);
+
+    const image = '/recipeThumbnail.png';
+
+    useEffect(() => {
+
+        const handleImageLoad = () => {
+            setLoading(false);
+        };
+
+        const img = new Image();
+        img.src = image;
+        img.onload = handleImageLoad;
+        img.onerror = handleImageLoad;
+    }, [image]);
+
     return (
         <div>
+            {loading && <LoadingModal />}
             <Project
                 link={null}
                 demoRoute='/projects/RecipeDemo'
                 title='Recipe App'
                 subtitle='A Swift mobile app that allows users to manage recipes'
-                image='/recipeThumbnail.png'
+                image={image}
                 imageAlt='Image of Recipe app'
                 description={
                     <p className='projectFullDescription'>

@@ -4,12 +4,22 @@ import '../CSS/About.css';
 import Footer from '../Components/Footer.js';
 import ImageSelector from '../Components/ImageSelector.js';
 import { useNavigate } from 'react-router-dom';
+import LoadingModal from '../Components/LoadingModal.js';
 
 function About() {
     const [isSmallWindow, setIsSmallWindow] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/AnaisProfile.png');
+    const [loading, setLoading] = useState(true);
 
     const navigate = useNavigate();
+    const images = [
+        '/AnaisProfile.png',
+        '/graduation.png',
+        '/disneyBathroom.png',
+        '/greece.png',
+        '/flowers.png',
+        '/anaisWithJuice.png'
+    ];
 
     useEffect(() => {
         function isWindowSize(size) {
@@ -29,6 +39,24 @@ function About() {
         };
     }, []);
 
+    useEffect(() => {
+        let imagesLoaded = 0;
+
+        const handleImageLoad = () => {
+            imagesLoaded += 1;
+            if (imagesLoaded === images.length) {
+                setLoading(false);
+            }
+        };
+
+        images.forEach((src) => {
+            const img = new Image();
+            img.src = src;
+            img.onload = handleImageLoad;
+            img.onerror = handleImageLoad;
+        });
+    }, [images]);
+
     const handleImageSelection = (image) => {
         setSelectedImage(image);
     }
@@ -44,6 +72,7 @@ function About() {
 
     return (
         <div className='app'>
+            {loading && <LoadingModal />}
             <Navbar />
             <div className='sectionContainer'>
                 <div className={`pageContent ${isSmallWindow ? 'center' : ''}`}>
@@ -67,12 +96,12 @@ function About() {
                             </div>
                         </div>
                         <div className={`imageSelectionContainer sectionContentContainer ${isSmallWindow ? 'hidden' : ''}`}>
-                            <ImageSelector image='/AnaisProfile.png' imageAlt='Professional picture of Anais' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
-                            <ImageSelector image='/graduation.png' imageAlt='Anais in her graduation gear' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
-                            <ImageSelector image='/disneyBathroom.png' imageAlt='Anais taking a mirror selfie' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
-                            <ImageSelector image='/greece.png' imageAlt='Anais in Greece' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
-                            <ImageSelector image='/flowers.png' imageAlt='Anais with flowers' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
-                            <ImageSelector image='/anaisWithJuice.png' imageAlt='Baby Anais drinking juice' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
+                            <ImageSelector image={images[0]} imageAlt='Professional picture of Anais' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
+                            <ImageSelector image={images[1]} imageAlt='Anais in her graduation gear' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
+                            <ImageSelector image={images[2]} imageAlt='Anais taking a mirror selfie' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
+                            <ImageSelector image={images[3]} imageAlt='Anais in Greece' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
+                            <ImageSelector image={images[4]} imageAlt='Anais with flowers' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
+                            <ImageSelector image={images[5]} imageAlt='Baby Anais drinking juice' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
                         </div>
                     </div>
                 </div>
