@@ -12,6 +12,7 @@ function About() {
     const [loading, setLoading] = useState(true);
 
     const navigate = useNavigate();
+    const resumeLink = 'https://anaisdawes-website-videos.s3.amazonaws.com/Resume_AnaisDawes.pdf';
     const images = [
         '/AnaisProfile.png',
         '/graduation.png',
@@ -62,7 +63,7 @@ function About() {
     }
 
     const handleDownload = () => {
-        const url = '/Resume.pdf';
+        const url = resumeLink;
         window.open(url, '_blank');
     };
 
