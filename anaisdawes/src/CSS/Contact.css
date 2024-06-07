@@ -25,6 +25,10 @@
     margin-right: 0.8rem;
 }
 
+.contactPageButton:hover {
+    background-color: #f1b290;
+}
+
 .contactPageIcon {
     margin-right: 0.8rem;
 }

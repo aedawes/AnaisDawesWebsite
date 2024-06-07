@@ -88,7 +88,7 @@ function About() {
                             <div className='fullWidthHorizontalLine' />
                             <div className='subsectionContainer'>
                                 <h3 className='resumeSubheader'>Professional Projects</h3>
-                                <div className='indent'>
+                                <div className={isSmallWindow ? '' : 'indent'}>
                                     <h4 className='resumeSubsubheader'>Blazzi - Lead Frontend Developer - 2024</h4>
                                     <p className='resumeDescription'>
                                         Led a team of five developers in frontend UI/UX development for a React Native app targeted towards the
@@ -96,7 +96,7 @@ function About() {
                                     </p>
                                     <button className='resumeButton' onClick={() => handleNavigation('/projects/blazzi')}>View Project</button>
                                 </div>
-                                <div className='indent'>
+                                <div className={isSmallWindow ? '' : 'indent'}>
                                     <h4 className='resumeSubsubheader'>Disney Studio LAB - Software Engineer - 2023</h4>
                                     <p className='resumeDescription'>
                                         Collaborated with a team of 10 students to develop a prototype system enabling remote executive visits to movie sets. Led
@@ -108,7 +108,7 @@ function About() {
                             </div>
                             <div className='subsectionContainer'>
                                 <h3 className='resumeSubheader'>Professional Experience</h3>
-                                <div className='indent'>
+                                <div className={isSmallWindow ? '' : 'indent'}>
                                     <ul className='list resumeDescription'>
                                         <li>headversity - Software Developer Intern</li>
                                         <li>BYU Computer Science - UX Lab Supervisor</li>
@@ -130,7 +130,7 @@ function About() {
                             <div className='fullWidthHorizontalLine' />
                             <div className='subsectionContainer'>
                                 <h3 className='resumeSubheader'>Skills</h3>
-                                <div className='indent'>
+                                <div className={isSmallWindow ? '' : 'indent'}>
                                     <p>
                                         React.js  •  Javascript  •  HTML  •  CSS  •  Vue.js  •  git  •  React Native  •  Swift  •
                                         RESTful APIs  •  MySQL  •  SCRUM  •  UX Principles  •  Node.js  •  Jira  •  PostgreSQL  •
@@ -140,7 +140,7 @@ function About() {
                             </div>
                             <div className='subsectionContainer'>
                                 <h3 className='resumeSubheader'>Certifications</h3>
-                                <div className='indent'>
+                                <div className={isSmallWindow ? '' : 'indent'}>
                                     <ul className='list'>
                                         <li>Professional Scrum Master - scrum.org</li>
                                         <li>Telepresence Patent with Disney Marvel</li>
@@ -160,7 +160,7 @@ function About() {
                             <div className='fullWidthHorizontalLine' />
                             <div className='subsectionContainer'>
                                 <h3 className='resumeSubheader'>Masters of Information Systems Management - Brigham Young University - 2024</h3>
-                                <div className='indent'>
+                                <div className={isSmallWindow ? '' : 'indent'}>
                                     <p>
                                         In this program nicknamed the MISM, I spent a year doing an accelerated masters degree that emphasized in software
                                         development. I love this program as it gave me so many opportunities to work in professionally simulated  teams and
@@ -170,7 +170,7 @@ function About() {
                             </div>
                             <div className='subsectionContainer'>
                                 <h3 className='resumeSubheader'>Bachelors of Science in Information Technology - Brigham Young University - 2023</h3>
-                                <div className='indent'>
+                                <div className={isSmallWindow ? '' : 'indent'}>
                                     <p>
                                         This program gave me the technical skills that I need to be where I am today. The most important thing I learned through
                                         these years was to learn how to teach myself new technologies and skills and to be able to learn from my peers. This is one

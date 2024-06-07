@@ -103,6 +103,10 @@
     text-align: center;
 }
 
+.linkButton:hover {
+    background-color: #f1b290;
+}
+
 .backbutton {
     width: 100%;
     max-width: 90vw;
@@ -112,6 +116,10 @@
     font-weight: 500;
     background-color: #A1B6C2;
     text-align: center;
+}
+
+.backbutton:hover {
+    background-color: #b2c6d1;
 }
 
 .demoVideo {

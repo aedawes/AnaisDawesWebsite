@@ -60,6 +60,10 @@
     margin-bottom: 1.2rem;
 }
 
+.resumeButton:hover {
+    background-color: #f1b290;
+}
+
 .fullWidthHorizontalLine {
     width: 100%;
     height: 0.05rem;
