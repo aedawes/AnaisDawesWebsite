@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import NavBarDropdown from './NavbarDropdown';
 import '../CSS/Navbar.css';
 
 function NavBar({ scrollToTarget }) {
@@ -8,8 +9,7 @@ function NavBar({ scrollToTarget }) {
     const [selectedItem, setSelectedItem] = useState('');
     const [isMediumWindow, setIsMediumWindow] = useState(false);
     const [isSmallWindow, setIsSmallWindow] = useState(false);
-    const [toggleDropdown, setToggleDropdown] = useState(false);
-    const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const anaisDawes = (isMediumWindow || isSmallWindow) ? '{AD}' : '{Anais Dawes}';
 
@@ -32,23 +32,12 @@ function NavBar({ scrollToTarget }) {
         };
     }, []);
 
-    useEffect(() => {
-        if (toggleDropdown) {
-            setIsDropdownVisible(true);
-        } else {
-            setTimeout(() => {
-                setIsDropdownVisible(false);
-            }, 3000);
-        }
-    }, [toggleDropdown]);
-
     const handleItemClick = (itemName) => {
         setSelectedItem(itemName);
     };
 
-    const handleDropdown = (event) => {
-        event.preventDefault();
-        setToggleDropdown(!toggleDropdown);
+    const toggleDropdown = () => {
+        setIsDropdownOpen(isDropdownOpen => !isDropdownOpen);
     }
 
     return (
@@ -57,8 +46,8 @@ function NavBar({ scrollToTarget }) {
                 <a href='/' className='navLogo'>{anaisDawes}</a>
                 {isSmallWindow ?
                     (
-                        <a href="#" onClick={handleDropdown}>
-                            {toggleDropdown ? (
+                        <a href="#" onClick={toggleDropdown}>
+                            {isDropdownOpen ? (
                                 <FontAwesomeIcon icon={faChevronUp} />
                             ) : (
                                 <FontAwesomeIcon icon={faChevronDown} />
@@ -90,22 +79,7 @@ function NavBar({ scrollToTarget }) {
                         </div>
                     )}
             </div>
-            {isDropdownVisible && (
-                <div className={`dropdown ${toggleDropdown ? 'open' : 'closed'}`}>
-                    <a className="navItem" href='#'>
-                        Projects
-                    </a>
-                    <a className="navItem" href='#'>
-                        About
-                    </a>
-                    <a className="navItem" href='#'>
-                        Resume
-                    </a>
-                    <a className="navItem" href='#'>
-                        Contact
-                    </a>
-                </div>
-            )}
+            <NavBarDropdown isDropdownOpen={isDropdownOpen} isSmallWindow={isSmallWindow} />
         </div >
     );
 }
