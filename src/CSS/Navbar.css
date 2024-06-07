@@ -2,8 +2,8 @@
     position: sticky;
     top: 0;
     width: 100vw;
-    z-index: 4;
     background-color: #567D91;
+    z-index: 2;
 }
 
 .relative {
@@ -16,6 +16,8 @@
     align-items: center;
     color: #E6ECF1;
     padding: 1.48rem;
+    background-color: #567D91;
+    z-index: 4;
 }
 
 .navLogo {
@@ -67,10 +69,10 @@
     background-color: #567D91;
     overflow: hidden;
     opacity: 0;
-    transform: translateY(-50%);
+    transform: translateY(-5%);
     transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
     pointer-events: none;
-    z-index: 2;
+    z-index: 3;
 }
 
 .open {
