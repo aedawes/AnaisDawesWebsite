@@ -4,7 +4,7 @@ function listOfProjects() {
             image: '/AvengineersThumbnail.png',
             path: '/projects/avengineers',
             name: 'Disney Studio LAB',
-            description: 'Sponsered capstone project where we built a prototype for a telepresence robot system that allows directors to remotely visit a movie set.'
+            description: 'Sponsored capstone project where we built a prototype for a telepresence robot system that allows directors to remotely visit a movie set.'
         },
         {
             image: '/BlazziThumbnail.png',
