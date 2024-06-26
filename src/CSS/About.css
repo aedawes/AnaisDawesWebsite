@@ -23,6 +23,10 @@
     margin-right: 2rem;
 }
 
+.reverseOrder {
+    order: 2;
+}
+
 .introductionImageContainer {
     height: calc(8rem + 8vw);
     min-width: calc(15rem + 8vw);
@@ -137,4 +141,8 @@
 
 .hidden {
     display: none;
+}
+
+.extraBottomPadding {
+    padding-bottom: 1.8rem;
 }

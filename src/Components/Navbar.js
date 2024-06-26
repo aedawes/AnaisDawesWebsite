@@ -19,8 +19,8 @@ function NavBar({ page }) {
         }
 
         function handleResize() {
-            setIsMediumWindow(isWindowSize(860));
-            setIsSmallWindow(isWindowSize(718));
+            setIsMediumWindow(isWindowSize(964));
+            setIsSmallWindow(isWindowSize(822));
         }
 
         window.addEventListener('resize', handleResize);

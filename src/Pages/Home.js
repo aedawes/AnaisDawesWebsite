@@ -19,7 +19,7 @@ function Home() {
     }
 
     function handleResize() {
-      setIsSmallWindow(isWindowSize(718));
+      setIsSmallWindow(isWindowSize(822));
     }
 
     window.addEventListener('resize', handleResize);

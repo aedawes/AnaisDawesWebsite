@@ -20,7 +20,7 @@ function Contact() {
         }
 
         function handleResize() {
-            setIsSmallWindow(isWindowSize(718));
+            setIsSmallWindow(isWindowSize(822));
         }
 
         window.addEventListener('resize', handleResize);
@@ -51,25 +51,27 @@ function Contact() {
         <div className='app'>
             <Navbar page='contact' />
             <div className='pageContent'>
-                <h1 className={`pageHeader ${isSmallWindow ? 'center' : ''}`}>Let's get in touch!</h1>
-                <h2 className={`pageSubheader ${isSmallWindow ? 'center' : ''}`}>I would love to connect. Reach out to me however you prefer!</h2>
-                <div className={isSmallWindow ? 'contactContainerVertical' : 'contactContainerHorizontal'}>
-                    <button className='contactPageButton' onClick={handleEmailClick}>
-                        <FontAwesomeIcon className='contactPageIcon' icon={faEnvelope} />
-                        Email
-                    </button>
-                    <button className='contactPageButton' onClick={() => handleExternalLink(linkedinUrl)}>
-                        <FontAwesomeIcon className='contactPageIcon' icon={faLinkedin} />
-                        Linkedin
-                    </button>
-                    <button className='contactPageButton' onClick={() => handleExternalLink(githubUrl)} >
-                        <FontAwesomeIcon className='contactPageIcon' icon={faGithub} />
-                        Github
-                    </button>
-                    <button className='contactPageButton' onClick={() => handleExternalLink(instagramUrl)} >
-                        <FontAwesomeIcon className='contactPageIcon' icon={faInstagram} />
-                        Instagram
-                    </button>
+                <div className='paddingContainer'>
+                    <h1 className={`pageHeader ${isSmallWindow ? 'center' : ''}`}>Let's get in touch!</h1>
+                    <h2 className={`pageSubheader ${isSmallWindow ? 'center' : ''}`}>I would love to connect. Reach out to me however you prefer!</h2>
+                    <div className={isSmallWindow ? 'contactContainerVertical' : 'contactContainerHorizontal'}>
+                        <button className={`contactPageButton ${isSmallWindow ? 'longButton' : ''}`} onClick={handleEmailClick}>
+                            <FontAwesomeIcon className='contactPageIcon' icon={faEnvelope} />
+                            Email
+                        </button>
+                        <button className={`contactPageButton ${isSmallWindow ? 'longButton' : ''}`} onClick={() => handleExternalLink(linkedinUrl)}>
+                            <FontAwesomeIcon className='contactPageIcon' icon={faLinkedin} />
+                            Linkedin
+                        </button>
+                        <button className={`contactPageButton ${isSmallWindow ? 'longButton' : ''}`} onClick={() => handleExternalLink(githubUrl)} >
+                            <FontAwesomeIcon className='contactPageIcon' icon={faGithub} />
+                            Github
+                        </button>
+                        <button className={`contactPageButton ${isSmallWindow ? 'longButton' : ''}`} onClick={() => handleExternalLink(instagramUrl)} >
+                            <FontAwesomeIcon className='contactPageIcon' icon={faInstagram} />
+                            Instagram
+                        </button>
+                    </div>
                 </div>
             </div>
             <Footer />

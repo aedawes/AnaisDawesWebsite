@@ -10,7 +10,7 @@ function listOfProjects() {
             image: '/BlazziThumbnail.png',
             path: '/projects/blazzi',
             name: 'Blazzi',
-            description: 'A app designed and built for new estheticians to be able to build a client base and for clients to filter for individual estheticians.'
+            description: 'An app designed and built for new estheticians to be able to build a client base and for clients to filter for individual estheticians.'
         },
         {
             image: '/SetThumbnail.png',

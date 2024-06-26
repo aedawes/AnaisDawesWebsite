@@ -28,7 +28,7 @@ function About() {
         }
 
         function handleResize() {
-            setIsSmallWindow(isWindowSize(860));
+            setIsSmallWindow(isWindowSize(964));
         }
 
         window.addEventListener('resize', handleResize);
@@ -79,7 +79,7 @@ function About() {
                 <div className={`pageContent ${isSmallWindow ? 'center' : ''}`}>
                     <div className='projectContent'>
                         <div className={`sectionInnerContainer sectionContentContainer ${isSmallWindow ? 'vertical' : ''}`}>
-                            <div className='introductionTextContainer'>
+                            <div className={`introductionTextContainer ${isSmallWindow ? 'reverseOrder' : ''}`}>
                                 <h1 className='pageHeader'>Hi, I'm Anaïs!</h1>
                                 <h2 className='pageSubheader'>Software Engineer</h2>
                                 <p>
@@ -90,8 +90,8 @@ function About() {
                                     thrive on solving complex problems and the satisfaction of seeing my work come to life through effective and efficient code!
                                 </p>
                             </div>
-                            <div className='vertical'>
-                                <div className={`introductionImageContainer ${isSmallWindow ? 'extraTopPadding' : ''}`}>
+                            <div className={`vertical ${isSmallWindow ? 'center extraBottomPadding' : ''}`}>
+                                <div className='introductionImageContainer'>
                                     <img className='introductionImage' src={selectedImage} alt='Anais Dawes' />
                                 </div>
                             </div>
