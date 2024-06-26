@@ -49,7 +49,7 @@ function Contact() {
 
     return (
         <div className='app'>
-            <Navbar />
+            <Navbar page='contact' />
             <div className='pageContent'>
                 <h1 className={`pageHeader ${isSmallWindow ? 'center' : ''}`}>Let's get in touch!</h1>
                 <h2 className={`pageSubheader ${isSmallWindow ? 'center' : ''}`}>I would love to connect. Reach out to me however you prefer!</h2>

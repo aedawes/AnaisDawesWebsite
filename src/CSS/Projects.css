@@ -1,7 +1,10 @@
 .pageContent {
     flex: 1;
     padding: 4rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
     max-width: 100vw;
+    animation: fadeIn 0.5s ease-in;
 }
 
 .projectsContainer {

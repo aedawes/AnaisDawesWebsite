@@ -32,7 +32,7 @@ function RecipeDemo() {
     return (
         <div className='app'>
             {loading && <LoadingModal />}
-            <Navbar />
+            <Navbar page='projects'/>
             <div className='pageContent projectContent'>
                 <div className='innerContent'>
                     <h1 className='pageHeader'>Recipe Demo</h1>

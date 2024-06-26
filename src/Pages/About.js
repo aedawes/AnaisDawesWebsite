@@ -74,7 +74,7 @@ function About() {
     return (
         <div className='app'>
             {loading && <LoadingModal />}
-            <Navbar />
+            <Navbar page='about' />
             <div className='sectionContainer'>
                 <div className={`pageContent ${isSmallWindow ? 'center' : ''}`}>
                     <div className='projectContent'>

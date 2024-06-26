@@ -32,7 +32,7 @@ function SetDemo() {
     return (
         <div className='app'>
             {loading && <LoadingModal />}
-            <Navbar />
+            <Navbar page='projects' />
             <div className='pageContent projectContent'>
                 <div className='innerContent'>
                     <h1 className='pageHeader'>Set Demo</h1>

@@ -23,6 +23,11 @@
 .navLogo {
     font-size: calc(0.8rem + 0.9vw);
     font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navLogo:hover {
+    color: #ED8957;
 }
 
 .nav-links {
@@ -45,7 +50,7 @@
 .squiggle {
     align-self: center;
     width: 5.3rem;
-    opacity: 0;
+    padding-top: 0.2rem;
     transition: opacity 0.3s ease;
 }
 

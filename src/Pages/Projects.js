@@ -56,7 +56,7 @@ function Projects() {
     return (
         <div className='app'>
             {loading && <LoadingModal />}
-            <Navbar />
+            <Navbar page='projects' />
             <div className={`pageContent ${isSmallWindow ? 'center' : ''}`}>
                 <h1 className='pageHeader'>Projects</h1>
                 <h2 className='pageSubheader'>Select a project to learn more</h2>
