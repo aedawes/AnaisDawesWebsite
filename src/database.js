@@ -19,6 +19,12 @@ function listOfProjects() {
             description: 'A mobile Swift app that implements the card game of Set. Players will match cards based on color, shape, and number.'
         },
         {
+            image: '/TodoThumbnail.png',
+            path: '/projects/todoTemplate',
+            name: 'Todo Template',
+            description: 'A Vue.js app that utlizes a MySQL database that acts as a template for students learning how to structure and implement databases.'
+        },
+        {
             image: '/ColorThumbnail.png',
             path: '/projects/colorpalette',
             name: 'Color Palette Generator',

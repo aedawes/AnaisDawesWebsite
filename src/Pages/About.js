@@ -2,25 +2,26 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../Components/Navbar.js';
 import '../CSS/About.css';
 import Footer from '../Components/Footer.js';
-import ImageSelector from '../Components/ImageSelector.js';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import LoadingModal from '../Components/LoadingModal.js';
+import Carousel from 'react-gallery-carousel';
+import 'react-gallery-carousel/dist/index.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function About() {
     const [isSmallWindow, setIsSmallWindow] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/AnaisProfile.png');
     const [loading, setLoading] = useState(true);
 
     const navigate = useNavigate();
     const resumeLink = 'https://anaisdawes-website-videos.s3.amazonaws.com/Resume_AnaisDawes.pdf';
     const images = [
-        '/AnaisProfile.png',
-        '/graduation.png',
-        '/disneyBathroom.png',
-        '/greece.png',
-        '/flowers.png',
-        '/anaisWithJuice.png'
-    ];
+        { src: '/AnaisProfile.png', alt: 'Professional picture of Anais' },
+        { src: '/graduation.png', alt: 'Anais in her graduation gear' },
+        { src: '/disneyBathroom.png', alt: 'Anais taking a mirror selfie' },
+        { src: '/greece.png', alt: 'Anais in Greece' },
+        { src: '/flowers.png', alt: 'Anais with flowers' },
+        { src: '/anaisWithJuice.png', alt: 'Baby Anais drinking juice' }];
 
     useEffect(() => {
         function isWindowSize(size) {
@@ -58,10 +59,6 @@ function About() {
         });
     }, [images]);
 
-    const handleImageSelection = (image) => {
-        setSelectedImage(image);
-    }
-
     const handleDownload = () => {
         const url = resumeLink;
         window.open(url, '_blank');
@@ -92,17 +89,26 @@ function About() {
                             </div>
                             <div className={`vertical ${isSmallWindow ? 'center extraBottomPadding' : ''}`}>
                                 <div className='introductionImageContainer'>
-                                    <img className='introductionImage' src={selectedImage} alt='Anais Dawes' />
+                                    <Carousel
+                                        images={images}
+                                        hasMediaButton={false}
+                                        hasSizeButton={false}
+                                        hasIndexBoard={false}
+                                        hasThumbnails={false}
+                                        hasDotButtons={'bottom'}
+                                        leftIcon={
+                                            <div className='carouselIconBackground'>
+                                                <FontAwesomeIcon icon={faArrowLeft} className='carouselIcon' />
+                                            </div>
+                                        }
+                                        rightIcon={
+                                            <div className='carouselIconBackground'>
+                                                <FontAwesomeIcon icon={faArrowRight} className='carouselIcon' />
+                                            </div>
+                                        }
+                                    />
                                 </div>
                             </div>
-                        </div>
-                        <div className={`imageSelectionContainer sectionContentContainer ${isSmallWindow ? 'hidden' : ''}`}>
-                            <ImageSelector image={images[0]} imageAlt='Professional picture of Anais' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
-                            <ImageSelector image={images[1]} imageAlt='Anais in her graduation gear' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
-                            <ImageSelector image={images[2]} imageAlt='Anais taking a mirror selfie' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
-                            <ImageSelector image={images[3]} imageAlt='Anais in Greece' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
-                            <ImageSelector image={images[4]} imageAlt='Anais with flowers' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
-                            <ImageSelector image={images[5]} imageAlt='Baby Anais drinking juice' handleImageSelection={handleImageSelection} selectedImage={selectedImage} />
                         </div>
                     </div>
                 </div>

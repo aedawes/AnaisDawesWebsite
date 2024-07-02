@@ -11,6 +11,8 @@ import Set from './Pages/Projects/Set';
 import Recipe from './Pages/Projects/Recipe';
 import SetDemo from './Pages/Projects/ProjectDemos/SetDemo';
 import RecipeDemo from './Pages/Projects/ProjectDemos/RecipeDemo';
+import TodoTemplate from './Pages/Projects/TodoTemplate';
+import TodoTemplateDemo from './Pages/Projects/ProjectDemos/TodoTemplateDemo';
 
 function App() {
   return (
@@ -24,11 +26,13 @@ function App() {
             <Route path='/contact' element={<Contact />} />
             <Route path='/projects/avengineers' element={<Avengineers />} />
             <Route path='/projects/blazzi' element={<Blazzi />} />
+            <Route path='/projects/todoTemplate' element={<TodoTemplate />} />
             <Route path='/projects/colorpalette' element={<ColorPalette />} />
             <Route path='/projects/set' element={<Set />} />
             <Route path='/projects/recipe' element={<Recipe />} />
             <Route path='/projects/SetDemo' element={<SetDemo />} />
             <Route path='/projects/RecipeDemo' element={<RecipeDemo />} />
+            <Route path='/projects/TodoTemplateDemo' element={<TodoTemplateDemo />} />
           </Routes>
         </ParallaxProvider>
       </div>

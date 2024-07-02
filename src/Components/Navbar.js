@@ -56,19 +56,19 @@ function NavBar({ page }) {
                                 <div className='link-container'>
                                     <a href='/projects' className={selectedItem === 'projects' ? 'nav-link selected' : 'nav-link'}>Projects</a>
                                     {selectedItem === 'projects' && (
-                                        <img src='./SquigglyLine.png' className='squiggle' alt='squiggledLine' />
+                                        <img src='/SquigglyLine.png' className='squiggle' alt='squiggledLine' />
                                     )}
                                 </div>
                                 <div className='link-container'>
                                     <a href='/about' className={selectedItem === 'about' ? 'nav-link selected' : 'nav-link'}>About</a>
                                     {selectedItem === 'about' && (
-                                        <img src='./SquigglyLine.png' className='squiggle' alt='squiggledLine' />
+                                        <img src='/SquigglyLine.png' className='squiggle' alt='squiggledLine' />
                                     )}
                                 </div>
                                 <div className='link-container'>
                                     <a href='/contact' className={selectedItem === 'contact' ? 'nav-link selected' : 'nav-link'}>Contact</a>
                                     {selectedItem === 'contact' && (
-                                        <img src='./SquigglyLine.png' className='squiggle' alt='squiggledLine' />
+                                        <img src='/SquigglyLine.png' className='squiggle' alt='squiggledLine' />
                                     )}
                                 </div>
                             </div>
