@@ -1,6 +1,7 @@
 .nav {
     position: sticky;
     width: 100vw;
+    top: 0;
     background-color: #567D91;
     z-index: 4;
 }
