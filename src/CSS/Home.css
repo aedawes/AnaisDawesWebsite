@@ -8,7 +8,6 @@ html, body {
     flex-direction: column;
     background-color: #E6ECF1;
     font-family: poppins;
-    min-height: 100vh;
 }
 
 .introContainer {
@@ -24,7 +23,7 @@ html, body {
 }
 
 .mobileIntroContainer {
-    height: 92vh;
+    height: 100%;
 }
 
 .introBackgroundText {
