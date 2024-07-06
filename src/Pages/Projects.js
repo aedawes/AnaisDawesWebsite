@@ -55,20 +55,23 @@ function Projects() {
 
     return (
         <div className='app'>
-            {loading && <LoadingModal />}
-            <Navbar page='projects' />
-            <div className={`pageContent ${isSmallWindow ? 'center' : ''}`}>
-                <div className='paddingContainer'>
-                    <h1 className='pageHeader'>Projects</h1>
-                    <h2 className='pageSubheader'>Select a project to learn more</h2>
-                    <div className='projectsContainer'>
-                        {projects.map((project) => (
-                            <ProjectCard image={project.image} path={project.path} projectName={project.name} projectDescription={project.description} />
-                        ))}
+            {loading ? <LoadingModal /> :
+                <div>
+                    <Navbar page='projects' />
+                    <div className={`pageContent ${isSmallWindow ? 'center' : ''}`}>
+                        <div className='paddingContainer'>
+                            <h1 className='pageHeader'>Projects</h1>
+                            <h2 className='pageSubheader'>Select a project to learn more</h2>
+                            <div className='projectsContainer'>
+                                {projects.map((project) => (
+                                    <ProjectCard image={project.image} path={project.path} projectName={project.name} projectDescription={project.description} />
+                                ))}
+                            </div>
+                        </div>
                     </div>
+                    <Footer />
                 </div>
-            </div>
-            <Footer />
+            }
         </div>
     );
 }

@@ -23,6 +23,10 @@ html, body {
     overflow: hidden;
 }
 
+.mobileIntroContainer {
+    height: 92vh;
+}
+
 .introBackgroundText {
     font-size: 18vw;
     line-height: 90%;
@@ -58,6 +62,10 @@ html, body {
     animation: fadeIn 1s ease-in-out;
 }
 
+.introTitleMobile {
+    padding-bottom: 4rem;
+}
+
 .recentProjectsContainer {
     display: flex;
     flex-direction: column;
@@ -71,7 +79,7 @@ html, body {
 }
 
 .projectsHeader {
-    font-size: calc(1rem + 0.8vw);
+    font-size: calc(1.4rem + 0.2vw);
     font-weight: 400;
     color: #0B0C21;
     margin: 4rem;
@@ -116,6 +124,23 @@ html, body {
 .noShow {
     opacity: 0;
     animation: none;
+}
+
+.particleAnimationBlur {
+    filter: blur(20px);
+}
+
+.downArrowCircle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 91vh;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(237, 137, 87, 0.66);
+    color: #E6ECF1;
+    border-radius: 100%;
 }
 
 @keyframes fadeIn {
