@@ -126,7 +126,7 @@ html, body {
 }
 
 .particleAnimationBlur {
-    filter: blur(20px);
+    filter: blur(40px);
 }
 
 .downArrowCircle {

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../Components/Navbar.js';
-import '../CSS/Projects.css';
 import Footer from '../Components/Footer.js';
-import { listOfProjects } from '../database.js';
 import ProjectCard from '../Components/ProjectCard.js';
 import LoadingModal from '../Components/LoadingModal.js';
+import { listOfProjects } from '../database.js';
+import '../CSS/Projects.css';
 
 function Projects() {
     const [isSmallWindow, setIsSmallWindow] = useState(false);
