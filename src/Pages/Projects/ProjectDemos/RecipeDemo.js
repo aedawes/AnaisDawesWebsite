@@ -10,7 +10,7 @@ function RecipeDemo() {
     const videoRef = useRef();
 
     const navigate = useNavigate();
-    const video = 'https://anaisdawes-website-videos.s3.amazonaws.com/recipeDemo.mp4';
+    const video = 'https://anaisdawes-website-videos.s3.amazonaws.com/recipesDemo.mp4';
 
     useEffect(() => {
 
@@ -32,7 +32,7 @@ function RecipeDemo() {
     return (
         <div className='app'>
             {loading && <LoadingModal />}
-            <Navbar page='projects'/>
+            <Navbar page='projects' />
             <div className='pageContent projectContent'>
                 <div className='innerContent'>
                     <h1 className='pageHeader'>Recipe Demo</h1>

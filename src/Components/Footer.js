@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faInstagram, faMedium } from '@fortawesome/free-brands-svg-icons';
 import '../CSS/Footer.css';
 
 function Footer() {
     const [isSmallWindow, setIsSmallWindow] = useState(false);
 
+    const mediumUrl = 'https://medium.com/@anais.dawes_58862';
     const linkedinUrl = 'https://www.linkedin.com/in/anais-dawes/';
     const githubUrl = 'https://github.com/aedawes';
     const instagramUrl = 'https://www.instagram.com/emmeanais/';
@@ -47,9 +48,12 @@ function Footer() {
     return (
         <div className={isSmallWindow ? 'footer footerSmall' : 'footer'}>
             {!isSmallWindow && (
-                <h1 className='currentlyText'>Currently: Learning Next.js</h1>
+                <h1 className='currentlyText'>Currently: Learning Next.js with Typescript</h1>
             )}
             <div className={isSmallWindow ? 'footerLinks footerSmall' : 'footerLinks'}>
+                <button onClick={() => handleExternalLink(mediumUrl)}>
+                    <FontAwesomeIcon className='contactIcon' icon={faMedium} />
+                </button>
                 <button onClick={handleEmailClick}>
                     <FontAwesomeIcon className='contactIcon' icon={faEnvelope} />
                 </button>

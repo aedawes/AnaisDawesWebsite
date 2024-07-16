@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faInstagram, faMedium } from '@fortawesome/free-brands-svg-icons';
 import Navbar from '../Components/Navbar.js';
 import '../CSS/Contact.css';
 import Footer from '../Components/Footer.js';
@@ -12,6 +12,7 @@ function Contact() {
 
     const linkedinUrl = 'https://www.linkedin.com/in/anais-dawes/';
     const githubUrl = 'https://github.com/aedawes';
+    const mediumUrl = 'https://medium.com/@anais.dawes_58862';
     const instagramUrl = 'https://www.instagram.com/emmeanais/';
 
     useEffect(() => {
@@ -66,6 +67,10 @@ function Contact() {
                         <button className={`contactPageButton ${isSmallWindow ? 'longButton' : ''}`} onClick={() => handleExternalLink(githubUrl)} >
                             <FontAwesomeIcon className='contactPageIcon' icon={faGithub} />
                             Github
+                        </button>
+                        <button className={`contactPageButton ${isSmallWindow ? 'longButton' : ''}`} onClick={() => handleExternalLink(mediumUrl)} >
+                            <FontAwesomeIcon className='contactPageIcon' icon={faMedium} />
+                            Medium
                         </button>
                         <button className={`contactPageButton ${isSmallWindow ? 'longButton' : ''}`} onClick={() => handleExternalLink(instagramUrl)} >
                             <FontAwesomeIcon className='contactPageIcon' icon={faInstagram} />

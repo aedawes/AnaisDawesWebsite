@@ -10,7 +10,7 @@ function TodoTemplateDemo() {
     const videoRef = useRef();
 
     const navigate = useNavigate();
-    const video = 'https://anaisdawes-website-videos.s3.amazonaws.com/TodoTemplateDemo.mp4';
+    const video = 'https://anaisdawes-website-videos.s3.amazonaws.com/todoTemplateDemo.mp4';
 
     useEffect(() => {
 
