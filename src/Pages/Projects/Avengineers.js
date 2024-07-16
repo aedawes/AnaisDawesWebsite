@@ -37,6 +37,7 @@ function Avengineers() {
                         </p>
                     }
                     skills='Python  •  C#  •  Team collaboration  •  AWS Cloud  •  Networking'
+                    mediumLink='https://medium.com/@anais.dawes_58862/avengineers-a-disney-marvel-sponsored-project-c6400d390a6c'
                 />
             }
         </div>

@@ -41,6 +41,7 @@ function Set() {
                     }
                     skills='Swift  •  SwiftUI  •  XCode  •  MVVM'
                     githubLink='https://github.com/aedawes/set-game'
+                    mediumLink='https://medium.com/@anais.dawes_58862/game-of-set-a125debfb412'
                 />
             }
         </div>

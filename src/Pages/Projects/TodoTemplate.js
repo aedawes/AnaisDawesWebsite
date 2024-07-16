@@ -41,6 +41,7 @@ function TodoTemplate() {
                     }
                     skills='Vue.js  •  Javascript  •  MySQL  •  Chakra UI'
                     githubLink='https://github.com/aedawes/Todo'
+                    mediumLink='https://medium.com/@anais.dawes_58862/todo-database-template-bd581a623d7f'
                 />
             }
         </div>

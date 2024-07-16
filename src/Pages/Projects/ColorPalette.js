@@ -38,6 +38,7 @@ function ColorPalette() {
                     }
                     skills='React  •  HTML/CSS  •  CSS Animations  •  Javascript'
                     githubLink='https://github.com/aedawes/colors'
+                    mediumLink='https://medium.com/@anais.dawes_58862/color-palette-generator-b3da654f0189'
                 />
             }
         </div>

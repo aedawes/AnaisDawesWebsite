@@ -8,6 +8,7 @@ html, body {
     flex-direction: column;
     background-color: #E6ECF1;
     font-family: poppins;
+    min-height: 100vh;
 }
 
 .introContainer {

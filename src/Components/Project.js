@@ -4,7 +4,7 @@ import '../CSS/Projects.css';
 import Footer from './Footer.js';
 import { useNavigate } from 'react-router-dom';
 
-function Project({ link, demoRoute, title, subtitle, image, imageAlt, description, skills, githubLink }) {
+function Project({ link, demoRoute, title, subtitle, image, imageAlt, description, skills, githubLink, mediumLink }) {
     const [isSmallWindow, setIsSmallWindow] = useState(false);
 
     const navigate = useNavigate();
@@ -58,6 +58,7 @@ function Project({ link, demoRoute, title, subtitle, image, imageAlt, descriptio
                     <div className='buttonContainer'>
                         {link ? <button onClick={() => handleLink(link)} className='linkButton'>See Demo</button> : null}
                         {demoRoute ? <button onClick={() => handleNavigation(demoRoute)} className='linkButton'>See Demo</button> : null}
+                        {mediumLink ? <button onClick={() => handleLink(mediumLink)} className='linkButton'>Read more on Medium</button> : null}
                         {githubLink ? <button onClick={() => handleLink(githubLink)} className='linkButton'>View in Github</button> : null}
                         <button onClick={() => handleNavigation(projectsEndpoint)} className='backbutton'>See All Projects</button>
                     </div>

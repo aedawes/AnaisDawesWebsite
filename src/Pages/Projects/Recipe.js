@@ -41,6 +41,7 @@ function Recipe() {
                     }
                     skills='Swift  •  SwiftUI  •  XCode  •  CRUD •  MockDatabase'
                     githubLink='https://github.com/aedawes/SwiftRecipeApp'
+                    mediumLink='https://medium.com/@anais.dawes_58862/recipes-app-7667318d35e0'
                 />
             }
         </div>
