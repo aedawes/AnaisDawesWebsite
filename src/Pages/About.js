@@ -1,17 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '../Components/Navbar.js';
 import '../CSS/About.css';
 import Footer from '../Components/Footer.js';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import LoadingModal from '../Components/LoadingModal.js';
-import Carousel from 'react-gallery-carousel';
 import 'react-gallery-carousel/dist/index.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Flicking from "@egjs/react-flicking";
+import "@egjs/react-flicking/dist/flicking.css";
+import { AutoPlay, Perspective, Sync, Fade } from "@egjs/flicking-plugins";
 
 function About() {
     const [isSmallWindow, setIsSmallWindow] = useState(false);
     const [loading, setLoading] = useState(true);
+    const [plugins, setPlugins] = useState([]);
+
+    const imageFlicking = useRef();
+    const captionFlicking = useRef();
+
+    const staticPlugins = [
+        new AutoPlay({ duration: 3500, direction: "NEXT", stopOnHover: true }),
+        new Perspective({ rotate: -0.5, scale: 2, perspective: 600 }),
+        new Fade()
+    ]
 
     const navigate = useNavigate();
     const resumeLink = 'https://anaisdawes-website-videos.s3.amazonaws.com/Resume_AnaisDawes.pdf';
@@ -22,6 +32,28 @@ function About() {
         { src: '/greece.png', alt: 'Anais in Greece' },
         { src: '/flowers.png', alt: 'Anais with flowers' },
         { src: '/anaisWithJuice.png', alt: 'Baby Anais drinking juice' }];
+
+    useEffect(() => {
+        if (!loading) {
+            setPlugins([
+                new Sync({
+                    type: "index",
+                    synchronizedFlickingOptions: [
+                        {
+                            flicking: imageFlicking.current,
+                            isClickable: false,
+                            isSlidable: true
+                        },
+                        {
+                            flicking: captionFlicking.current,
+                            isClickable: false,
+                            isSlidable: true
+                        }
+                    ]
+                })
+            ]);
+        }
+    }, [loading]);
 
     useEffect(() => {
         function isWindowSize(size) {
@@ -76,8 +108,70 @@ function About() {
                     <div className='sectionContainer'>
                         <div className={`pageContent ${isSmallWindow ? 'center' : ''}`}>
                             <div className='projectContent'>
-                                <div className={`sectionInnerContainer sectionContentContainer ${isSmallWindow ? 'vertical' : ''}`}>
-                                    <div className={`introductionTextContainer ${isSmallWindow ? 'reverseOrder' : ''}`}>
+                                <div className={`sectionInnerContainer sectionContentContainer vertical`}>
+                                    <div className={`introductionTextContainer`}>
+                                        <div className={`vertical center extraBottomPadding`}>
+                                            <div className='introductionCarouselContainer'>
+                                                <Flicking
+                                                    ref={imageFlicking}
+                                                    className='introductionCarousel'
+                                                    align="center"
+                                                    circular={true}
+                                                    panelsPerView={isSmallWindow ? 2 : 3}
+                                                    plugins={[...plugins, staticPlugins[0], staticPlugins[1]]}
+                                                >
+                                                    <div className="card-panel">
+                                                        <img className='introductionImage' src='/AnaisProfile.png' alt='Professional picture of Anais' draggable="false" />
+                                                    </div>
+                                                    <div className="card-panel">
+                                                        <img className='introductionImage' src='/graduation.png' alt='Anais in her graduation regalia' draggable="false" />
+                                                    </div>
+                                                    <div className="card-panel">
+                                                        <img className='introductionImage' src='/disneyBathroom.png' alt='Anais taking a mirror selfie' draggable="false" />
+                                                    </div>
+                                                    <div className="card-panel">
+                                                        <img className='introductionImage' src='/greece.png' alt='Anais in Greece' draggable="false" />
+                                                    </div>
+                                                    <div className="card-panel">
+                                                        <img className='introductionImage' src='/flowers.png' alt='Anais with flowers' draggable="false" />
+                                                    </div>
+                                                    <div className="card-panel">
+                                                        <img className='introductionImage' src='/anaisWithJuice.png' alt='Baby Anais drinking juice' draggable="false" />
+                                                    </div>
+                                                </Flicking>
+                                            </div>
+                                            {!isSmallWindow && (
+                                                <div className='introductionCaptionCarouselContainer'>
+                                                    <Flicking
+                                                        ref={captionFlicking}
+                                                        className='introductionCarousel'
+                                                        align="center"
+                                                        circular={true}
+                                                        panelsPerView={1}
+                                                        plugins={[...plugins, staticPlugins[0], staticPlugins[2]]}
+                                                    >
+                                                        <div className="card-panel">
+                                                            <p>Anais Dawes</p>
+                                                        </div>
+                                                        <div className="card-panel">
+                                                            <p>Graduation from my masters</p>
+                                                        </div>
+                                                        <div className="card-panel">
+                                                            <p>Me with my badge at Disney StudioLAB</p>
+                                                        </div>
+                                                        <div className="card-panel">
+                                                            <p>My study abroad to Athens</p>
+                                                        </div>
+                                                        <div className="card-panel">
+                                                            <p>My floral design hobby</p>
+                                                        </div>
+                                                        <div className="card-panel">
+                                                            <p>Me as a baby holding juice :{')'}</p>
+                                                        </div>
+                                                    </Flicking>
+                                                </div>
+                                            )}
+                                        </div>
                                         <h1 className='pageHeader'>Hi, I'm Anaïs!</h1>
                                         <h2 className='pageSubheader'>Software Engineer</h2>
                                         <p>
@@ -87,28 +181,6 @@ function About() {
                                             My expertise lies in crafting intuitive and visually appealing front-end code, ensuring a seamless user experience. I
                                             thrive on solving complex problems and the satisfaction of seeing my work come to life through effective and efficient code!
                                         </p>
-                                    </div>
-                                    <div className={`vertical ${isSmallWindow ? 'center extraBottomPadding' : ''}`}>
-                                        <div className='introductionImageContainer'>
-                                            <Carousel
-                                                images={images}
-                                                hasMediaButton={false}
-                                                hasSizeButton={false}
-                                                hasIndexBoard={false}
-                                                hasThumbnails={false}
-                                                hasDotButtons={'bottom'}
-                                                leftIcon={
-                                                    <div className='carouselIconBackground'>
-                                                        <FontAwesomeIcon icon={faArrowLeft} className='carouselIcon' />
-                                                    </div>
-                                                }
-                                                rightIcon={
-                                                    <div className='carouselIconBackground'>
-                                                        <FontAwesomeIcon icon={faArrowRight} className='carouselIcon' />
-                                                    </div>
-                                                }
-                                            />
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +219,7 @@ function About() {
                                         <h3 className='resumeSubheader'>Professional Experience</h3>
                                         <div className={isSmallWindow ? '' : 'indent'}>
                                             <ul className='list resumeDescription'>
-                                                <li>headversity - Software Developer Intern</li>
+                                                <li>Headversity - Software Developer Intern</li>
                                                 <li>BYU Computer Science - UX Lab Supervisor</li>
                                                 <li>BYU IT - Database TA</li>
                                                 <li>BYU Cybersecurity Research Lab - Website manager</li>

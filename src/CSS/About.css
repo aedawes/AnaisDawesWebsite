@@ -22,18 +22,32 @@
     width: 100%;
     margin-right: 2rem;
 }
-
-.reverseOrder {
-    order: 2;
+.introductionCarouselContainer {
+    height: calc(8rem + 8vw);
+    width: 100%;
+    /* box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2); */
+    border-radius: 7px;
+    overflow: hidden;
+    /* padding: 1rem; */
 }
 
-.introductionImageContainer {
-    height: calc(8rem + 8vw);
-    min-width: calc(15rem + 8vw);
-    min-height: 12rem;
-    max-width: 24.5rem;
-    border: 1px solid #0B0C21;
-    border-radius: 12px;
+.introductionCaptionCarouselContainer div {
+    display: flex;
+    align-items: center;
+}
+
+.introductionCaptionCarouselContainer p {
+    align-self: center;
+    width: 100%;
+}
+
+.introductionCaptionCarouselContainer {
+    margin-top: 0.8rem;
+    height: calc(1rem + 1vw);
+    width: 33%;
+    min-width: 18rem;
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); */
+    border-radius: 7px;
     overflow: hidden;
 }
 
@@ -41,6 +55,8 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .resumeHeaderContainer {
@@ -106,7 +122,7 @@
 }
 
 .extraTopPadding {
-    margin-top: 1.8rem;
+    margin-top: 4rem;
 }
 
 .imageSelectionContainer {
@@ -167,3 +183,11 @@
     border-radius: 100%;
     margin: 1rem;
 }
+
+.introductionCarousel {
+    height: 100%;
+}
+
+/* .panelImage {
+    margin: 1rem;
+} */
