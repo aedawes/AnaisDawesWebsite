@@ -92,7 +92,7 @@
     align-items: center;
     width: 100%;
     max-height: 0;
-    background-color: var(--main-shadow);
+    background-color: var(--secondary-text);
     font-size: calc(1rem + 0.2vw);
     color: var(--main-white);
     text-decoration: none;
