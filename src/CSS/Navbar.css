@@ -2,7 +2,7 @@
     position: sticky;
     width: 100vw;
     top: 0;
-    background-color: #567D91;
+    background-color: var(--main-background);
     z-index: 4;
 }
 
@@ -14,9 +14,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #E6ECF1;
+    color: var(--main-white);
     padding: 1.48rem;
-    background-color: #567D91;
+    background-color: var(--main-background);
     z-index: 4;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .navLogo:hover {
-    color: #ED8957;
+    color: var(--main-accent);
 }
 
 .nav-links {
@@ -38,13 +38,13 @@
 }
 
 .nav-link {
-    color: #E6ECF1;
+    color: var(--main-white);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .selected {
-    color: #E6ECF1;
+    color: var(--main-white);
 }
 
 .squiggle {
@@ -71,7 +71,7 @@
     flex-direction: column;
     width: 100vw;
     height: fit-content;
-    background-color: #567D91;
+    background-color: var(--main-background);
     overflow: hidden;
     opacity: 0;
     transform: translateY(-5%);
@@ -92,20 +92,20 @@
     align-items: center;
     width: 100%;
     max-height: 0;
-    background-color: rgba(230, 236, 241, 0.07);
+    background-color: var(--main-shadow);
     font-size: calc(1rem + 0.2vw);
-    color: #E6ECF1;
+    color: var(--main-white);
     text-decoration: none;
     padding: 1.8rem;
-    border-bottom: 1px solid #8DA8B8;
+    border-bottom: 1px solid var(--secondary-background);
 }
 
 .navItem:hover {
-    background-color: #8DA8B8;
+    background-color: var(--secondary-background);
 }
 
 .nav-link:hover {
-    color: #ED8957;
+    color: var(--main-accent);
 }
 
 @keyframes expand {

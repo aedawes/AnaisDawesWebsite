@@ -6,7 +6,7 @@ html, body {
 .app {
     display: flex;
     flex-direction: column;
-    background-color: #E6ECF1;
+    background-color: var(--main-white);
     font-family: poppins;
     min-height: 100vh;
 }
@@ -17,9 +17,9 @@ html, body {
     align-items: center;
     height: 100%;
     width: 100vw;
-    background-color: #567D91;
+    background-color: var(--main-background);
     padding-bottom: 1.48rem;
-    box-shadow: 0px 2px 7px 2px #9b9fa1;
+    box-shadow: 0px 2px 7px 2px var(main-shadow);
     overflow: hidden;
 }
 
@@ -30,7 +30,7 @@ html, body {
 .introBackgroundText {
     font-size: 18vw;
     line-height: 90%;
-    color: rgba(230, 236, 241, 0.07);
+    color: var(--secondary-text);
     font-weight: 900;
     text-align: center;
     z-index: 0;
@@ -52,13 +52,13 @@ html, body {
 
 .introName {
     font-size: calc(2rem + 1.2vw);
-    color: #E6ECF1;
+    color: var(--main-white);
     animation: fadeIn 1s ease-in-out;
 }
 
 .introTitle {
     font-size: calc(2rem + 1.2vw);
-    color: #ED8957;
+    color: var(--main-accent);
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -81,7 +81,7 @@ html, body {
 .projectsHeader {
     font-size: calc(1.4rem + 0.2vw);
     font-weight: 400;
-    color: #0B0C21;
+    color: var(--main-dark);
     margin: 4rem;
     margin-bottom: 0rem;
 }
@@ -89,7 +89,7 @@ html, body {
 .horizontalLine {
     width: 80%;
     height: 0.1rem;
-    background-color: #0B0C21;
+    background-color: var(--main-dark);
     margin: 1.48rem;
 }
 
@@ -109,11 +109,11 @@ html, body {
     justify-content: center;
     align-items: center;
     margin-bottom: 4rem;
-    color: #0B0C21;
+    color: var(--main-dark);
 }
 
 .seeMoreContainer:hover {
-    color: #567D91;
+    color: var(--main-background);
 }
 
 .seeMoreText {
@@ -138,8 +138,8 @@ html, body {
     top: 78vh;
     width: 2rem;
     height: 2rem;
-    background-color: rgba(237, 137, 87, 0.66);
-    color: #E6ECF1;
+    background-color: var(--main-accent);
+    color: var(--main-white);
     border-radius: 100%;
 }
 

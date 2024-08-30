@@ -35,23 +35,38 @@ function About() {
 
     useEffect(() => {
         if (!loading) {
-            setPlugins([
-                new Sync({
-                    type: "index",
-                    synchronizedFlickingOptions: [
-                        {
-                            flicking: imageFlicking.current,
-                            isClickable: false,
-                            isSlidable: true
-                        },
-                        {
-                            flicking: captionFlicking.current,
-                            isClickable: false,
-                            isSlidable: true
-                        }
-                    ]
-                })
-            ]);
+            if (isSmallWindow) {
+                setPlugins([
+                    new Sync({
+                        type: "index",
+                        synchronizedFlickingOptions: [
+                            {
+                                flicking: imageFlicking.current,
+                                isClickable: false,
+                                isSlidable: true
+                            }
+                        ]
+                    })
+                ]);
+            } else {
+                setPlugins([
+                    new Sync({
+                        type: "index",
+                        synchronizedFlickingOptions: [
+                            {
+                                flicking: imageFlicking.current,
+                                isClickable: false,
+                                isSlidable: true
+                            },
+                            {
+                                flicking: captionFlicking.current,
+                                isClickable: false,
+                                isSlidable: true
+                            }
+                        ]
+                    })
+                ]);
+            }
         }
     }, [loading]);
 
@@ -106,7 +121,7 @@ function About() {
                 <div>
                     <Navbar page='about' />
                     <div className='sectionContainer'>
-                        <div className={`pageContent ${isSmallWindow ? 'center' : ''}`}>
+                        <div className={`pageContent ${isSmallWindow ? 'center pageContentSmall' : ''}`}>
                             <div className='projectContent'>
                                 <div className={`sectionInnerContainer sectionContentContainer vertical`}>
                                     <div className={`introductionTextContainer`}>
@@ -117,7 +132,7 @@ function About() {
                                                     className='introductionCarousel'
                                                     align="center"
                                                     circular={true}
-                                                    panelsPerView={isSmallWindow ? 2 : 3}
+                                                    panelsPerView={isSmallWindow ? 1 : 3}
                                                     plugins={[...plugins, staticPlugins[0], staticPlugins[1]]}
                                                 >
                                                     <div className="card-panel">

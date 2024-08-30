@@ -4,7 +4,7 @@ import BounceLoader from "react-spinners/BounceLoader";
 
 const LoadingModal = () => (
     <div className="loading-modal">
-        <BounceLoader color='#ED8957' />
+        <BounceLoader color='var(--main-accent)' />
         <div className="loadingText">Loading...</div>
     </div>
 );
