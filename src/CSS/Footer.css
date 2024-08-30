@@ -5,10 +5,10 @@
     align-items: center;
     width: 100%;
     height: fit-content;
-    background-color: #8DA8B8;
-    color: #0B0C21;
+    background-color: var(--secondary-background);
+    color: var(--main-dark);
     font-size: calc(1rem + 0.2vw);
-    box-shadow: inset 0px 2px 8px 2px #849ca9;
+    box-shadow: inset 0px 2px 8px 2px var(--secondary-shadow);
 }
 
 .currentlyText {

@@ -5,14 +5,14 @@
     width: 18rem;
     min-width: 18rem;
     border-radius: 8px;
-    background-color: #8DA8B8;
+    background-color: var(--secondary-background);
     margin-bottom: 3rem;
     padding: 1.2rem;
-    box-shadow: 0px 5px 4px -3px #787979;
+    box-shadow: 0px 5px 4px -3px var(--main-shadow);
 }
 
 .card:hover {
-    background-color: #b2c6d1;
+    background-color: var(--secondary-background-hover);
 }
 
 .cardImage {
@@ -25,14 +25,14 @@
     height: 10rem;
     width: 100%;
     border-radius: 12px;
-    border: 1px solid #0B0C21;
+    border: 1px solid var(--main-dark);
     overflow: hidden;
 }
 
 .projectHeader {
     font-weight: 600;
     font-size: 1.2rem;
-    color: #0B0C21;
+    color: var(--main-dark);
     margin-top: 1.2rem;
     margin-bottom: 0.2rem;
 }

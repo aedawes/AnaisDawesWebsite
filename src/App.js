@@ -13,8 +13,10 @@ import SetDemo from './Pages/Projects/ProjectDemos/SetDemo';
 import RecipeDemo from './Pages/Projects/ProjectDemos/RecipeDemo';
 import TodoTemplate from './Pages/Projects/TodoTemplate';
 import TodoTemplateDemo from './Pages/Projects/ProjectDemos/TodoTemplateDemo';
+import './CSS/Theme.css';
 
 function App() {
+
   return (
     <Router>
       <div className="App">
