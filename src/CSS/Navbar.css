@@ -18,11 +18,13 @@
     padding: 1.48rem;
     background-color: var(--main-background);
     z-index: 4;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .navLogo {
     font-size: calc(0.8rem + 0.9vw);
     font-weight: 600;
+    color: var(--white-text);
     transition: color 0.3s;
 }
 
@@ -32,19 +34,19 @@
 
 .nav-links {
     display: flex;
-    width: calc(15rem + 5.96vw);
+    width: calc(18rem + 5.96vw);
     justify-content: space-between;
     font-size: calc(1rem + 0.2vw);
 }
 
 .nav-link {
-    color: var(--main-white);
+    color: var(--white-text);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .selected {
-    color: var(--main-white);
+    color: var(--white-text);
 }
 
 .squiggle {
@@ -94,7 +96,7 @@
     max-height: 0;
     background-color: var(--secondary-text);
     font-size: calc(1rem + 0.2vw);
-    color: var(--main-white);
+    color: var(--white-text);
     text-decoration: none;
     padding: 1.8rem;
     border-bottom: 1px solid var(--secondary-background);
@@ -106,6 +108,10 @@
 
 .nav-link:hover {
     color: var(--main-accent);
+}
+
+.mobileMenuIcon {
+    color: var(--white-text);
 }
 
 @keyframes expand {

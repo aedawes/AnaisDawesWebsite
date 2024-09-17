@@ -1,0 +1,39 @@
+/* Container styling for the switch */
+.toggle-container {
+    width: 3.5rem;
+    height: 1.7rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--main-white);
+    border-radius: 1rem;
+    padding: 0.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* The switch handle */
+.toggle-handle {
+    width: 1.4rem;
+    height: 1.4rem;
+    background-color: var(--main-accent);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.toggle-container.dark .toggle-handle {
+    transform: translateX(calc(3.5rem - 1.6rem));
+}
+
+.icon {
+    color: var(--main-white);
+    height: 1rem;
+}
+
+.toggle-container:hover .toggle-handle {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

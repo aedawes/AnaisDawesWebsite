@@ -27,18 +27,21 @@
 .pageHeader {
     font-size: calc(1.5rem + 0.2vw);
     font-weight: 600;
+    color: var(--main-dark);
 }
 
 .pageSubheader {
     font-size: calc(1rem + 0.2vw);
     font-weight: 500;
     margin-bottom: 1.8rem;
+    color: var(--main-dark);
 }
 
 .projectContent {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--white-text);
 }
 
 .projectDescriptionContainer {
@@ -78,16 +81,19 @@
     margin-bottom: 1.8rem;
     font-size: 1rem;
     font-weight: 400;
+    color: var(--main-dark);
 }
 
 .skillsHeader {
     font-size: calc(1rem + 0.2vw);
     font-weight: 600;
+    color: var(--main-dark);
 }
 
 .skills {
     font-size: 1rem;
     margin-top: 0.4rem;
+    color: var(--main-dark);
 }
 
 .linkReplacement {
@@ -109,10 +115,11 @@
     font-weight: 500;
     background-color: var(--main-accent);
     text-align: center;
+    color: var(--main-white);
 }
 
 .linkButton:hover {
-    background-color: var(--main-accent-hover);
+    background-color: var(--secondary-accent);
 }
 
 .backbutton {
@@ -124,6 +131,7 @@
     font-weight: 500;
     background-color: var(--secondary-background);
     text-align: center;
+    color: var(--main-white);
 }
 
 .backbutton:hover {

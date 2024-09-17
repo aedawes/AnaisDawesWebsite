@@ -9,6 +9,7 @@
     color: var(--main-dark);
     font-size: calc(1rem + 0.2vw);
     box-shadow: inset 0px 2px 8px 2px var(--secondary-shadow);
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .currentlyText {

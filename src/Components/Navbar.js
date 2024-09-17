@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { ThemeContext } from '../ThemeContext';
+import Toggle from './Toggle';
 import NavBarDropdown from './NavbarDropdown';
 import '../CSS/Navbar.css';
 
@@ -9,6 +11,8 @@ function NavBar({ page }) {
     const [isMediumWindow, setIsMediumWindow] = useState(false);
     const [isSmallWindow, setIsSmallWindow] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    const { theme } = useContext(ThemeContext);
 
     const anaisDawes = (isMediumWindow || isSmallWindow) ? '{AD}' : '{Anais Dawes}';
     const selectedItem = page;
@@ -44,9 +48,9 @@ function NavBar({ page }) {
                     (
                         <button onClick={toggleDropdown}>
                             {isDropdownOpen ? (
-                                <FontAwesomeIcon icon={faChevronUp} />
+                                <FontAwesomeIcon className='mobileMenuIcon' icon={faChevronUp} />
                             ) : (
-                                <FontAwesomeIcon icon={faChevronDown} />
+                                <FontAwesomeIcon className='mobileMenuIcon' icon={faChevronDown} />
                             )}
                         </button>
                     ) :
@@ -56,20 +60,35 @@ function NavBar({ page }) {
                                 <div className='link-container'>
                                     <a href='/projects' className={selectedItem === 'projects' ? 'nav-link selected' : 'nav-link'}>Projects</a>
                                     {selectedItem === 'projects' && (
-                                        <img src='/SquigglyLine.png' className='squiggle' alt='squiggledLine' />
+                                        theme === 'light' ? (
+                                            <img src='/SquigglyLine.png' className='squiggle' alt='squiggledLine' />
+                                        ) : (
+                                            <img src='/blueSquiggle.png' className='squiggle' alt='squiggledLine' />
+                                        )
                                     )}
                                 </div>
                                 <div className='link-container'>
                                     <a href='/about' className={selectedItem === 'about' ? 'nav-link selected' : 'nav-link'}>About</a>
                                     {selectedItem === 'about' && (
-                                        <img src='/SquigglyLine.png' className='squiggle' alt='squiggledLine' />
+                                        theme === 'light' ? (
+                                            <img src='/SquigglyLine.png' className='squiggle' alt='squiggledLine' />
+                                        ) : (
+                                            <img src='/blueSquiggle.png' className='squiggle' alt='squiggledLine' />
+                                        )
                                     )}
                                 </div>
                                 <div className='link-container'>
                                     <a href='/contact' className={selectedItem === 'contact' ? 'nav-link selected' : 'nav-link'}>Contact</a>
                                     {selectedItem === 'contact' && (
-                                        <img src='/SquigglyLine.png' className='squiggle' alt='squiggledLine' />
+                                        theme === 'light' ? (
+                                            <img src='/SquigglyLine.png' className='squiggle' alt='squiggledLine' />
+                                        ) : (
+                                            <img src='/blueSquiggle.png' className='squiggle' alt='squiggledLine' />
+                                        )
                                     )}
+                                </div>
+                                <div className='link-container'>
+                                    <Toggle />
                                 </div>
                             </div>
                         </div>

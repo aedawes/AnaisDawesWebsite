@@ -23,15 +23,17 @@ function About() {
         new Fade()
     ]
 
-    const navigate = useNavigate();
-    const resumeLink = 'https://anaisdawes-website-videos.s3.amazonaws.com/Resume_AnaisDawes.pdf';
     const images = [
         { src: '/AnaisProfile.png', alt: 'Professional picture of Anais' },
         { src: '/graduation.png', alt: 'Anais in her graduation gear' },
         { src: '/disneyBathroom.png', alt: 'Anais taking a mirror selfie' },
         { src: '/greece.png', alt: 'Anais in Greece' },
         { src: '/flowers.png', alt: 'Anais with flowers' },
-        { src: '/anaisWithJuice.png', alt: 'Baby Anais drinking juice' }];
+        { src: '/anaisWithJuice.png', alt: 'Baby Anais drinking juice' }
+    ];
+
+    const navigate = useNavigate();
+    const resumeLink = 'https://anaisdawes-website-videos.s3.amazonaws.com/Resume_AnaisDawes.pdf';
 
     useEffect(() => {
         if (!loading) {
@@ -68,7 +70,7 @@ function About() {
                 ]);
             }
         }
-    }, [loading]);
+    }, [loading, isSmallWindow]);
 
     useEffect(() => {
         function isWindowSize(size) {
@@ -90,6 +92,14 @@ function About() {
 
     useEffect(() => {
         let imagesLoaded = 0;
+        const images = [
+            { src: '/AnaisProfile.png', alt: 'Professional picture of Anais' },
+            { src: '/graduation.png', alt: 'Anais in her graduation gear' },
+            { src: '/disneyBathroom.png', alt: 'Anais taking a mirror selfie' },
+            { src: '/greece.png', alt: 'Anais in Greece' },
+            { src: '/flowers.png', alt: 'Anais with flowers' },
+            { src: '/anaisWithJuice.png', alt: 'Baby Anais drinking juice' }
+        ];
 
         const handleImageLoad = () => {
             imagesLoaded += 1;
@@ -100,11 +110,11 @@ function About() {
 
         images.forEach((src) => {
             const img = new Image();
-            img.src = src;
+            img.src = src.src;  // Use src.src instead of just src to match the object structure
             img.onload = handleImageLoad;
             img.onerror = handleImageLoad;
         });
-    }, [images]);
+    }, []);
 
     const handleDownload = () => {
         const url = resumeLink;
@@ -135,6 +145,14 @@ function About() {
                                                     panelsPerView={isSmallWindow ? 1 : 3}
                                                     plugins={[...plugins, staticPlugins[0], staticPlugins[1]]}
                                                 >
+                                                    {
+                                                        images.map((image, index) => (
+                                                            <div className="card-panel" key={index}>
+                                                                <img className='introductionImage' src={image.src} alt={image.alt} draggable="false" />
+                                                            </div>
+                                                        ))
+                                                    }
+                                                    {/*                                                     
                                                     <div className="card-panel">
                                                         <img className='introductionImage' src='/AnaisProfile.png' alt='Professional picture of Anais' draggable="false" />
                                                     </div>
@@ -152,7 +170,7 @@ function About() {
                                                     </div>
                                                     <div className="card-panel">
                                                         <img className='introductionImage' src='/anaisWithJuice.png' alt='Baby Anais drinking juice' draggable="false" />
-                                                    </div>
+                                                    </div> */}
                                                 </Flicking>
                                             </div>
                                             {!isSmallWindow && (
