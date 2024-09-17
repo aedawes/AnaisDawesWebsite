@@ -1,12 +1,28 @@
-:root {
+[data-theme='light'] {
     --main-background: #567D91;
     --secondary-background: #8DA8B8;
     --secondary-text: #618294;
     --secondary-background-hover: #b2c6d1;
     --main-white: #edf2f7;
+    --white-text: #edf2f7;
     --main-dark: #0B0C21;
     --main-accent: #ED8957;
     --secondary-accent: #f1b290;
     --main-shadow: #cacdce;
     --secondary-shadow: #849ca9;
+}
+
+[data-theme='dark'] {
+    --main-background: #464B65;
+    --secondary-background: #5B6183;
+    --secondary-text: #424761;
+    --secondary-background-hover: #6f7599;
+    --main-white: #1E1E1E;
+    --white-text: #edf2f7;
+    --dark-text: #1E1E1E;
+    --main-dark: #edf2f7;
+    --main-accent: #6799C5;
+    --secondary-accent: #80afd9;
+    --main-shadow: #171717;
+    --secondary-shadow: #45495f;
 }

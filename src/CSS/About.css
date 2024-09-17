@@ -14,6 +14,7 @@
     max-width: 90vw;
     padding-left: 2rem;
     padding-right: 2rem;
+    color: var(--main-dark);
 }
 
 .introductionTextContainer {

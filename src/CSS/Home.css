@@ -1,6 +1,7 @@
 html, body {
     height: 100%;
     margin: 0;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .app {
@@ -9,6 +10,7 @@ html, body {
     background-color: var(--main-white);
     font-family: poppins;
     min-height: 100vh;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .introContainer {
@@ -21,6 +23,7 @@ html, body {
     padding-bottom: 1.48rem;
     box-shadow: 0px 2px 7px 2px var(main-shadow);
     overflow: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .mobileIntroContainer {
@@ -37,6 +40,7 @@ html, body {
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
     animation: fadeIn 3s ease-in-out;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .nameContainer {
@@ -52,7 +56,7 @@ html, body {
 
 .introName {
     font-size: calc(2rem + 1.2vw);
-    color: var(--main-white);
+    color: var(--white-text);
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -60,6 +64,7 @@ html, body {
     font-size: calc(2rem + 1.2vw);
     color: var(--main-accent);
     animation: fadeIn 1s ease-in-out;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .introTitleMobile {
@@ -113,7 +118,7 @@ html, body {
 }
 
 .seeMoreContainer:hover {
-    color: var(--main-background);
+    color: var(--main-accent);
 }
 
 .seeMoreText {
@@ -139,7 +144,7 @@ html, body {
     width: 2rem;
     height: 2rem;
     background-color: var(--main-accent);
-    color: var(--main-white);
+    color: var(--white-text);
     border-radius: 100%;
 }
 
