@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
-import { ThemeProvider } from './ThemeContext';
 import Home from './Pages/Home';
 import Projects from './Pages/Projects';
 import About from './Pages/About';
@@ -19,29 +18,27 @@ import './CSS/Theme.css';
 
 function App() {
   return (
-    <ThemeProvider>
-      <Router>
-        <div className="App">
-          <ParallaxProvider>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path='/projects' element={<Projects />} />
-              <Route path='/about' element={<About />} />
-              <Route path='/contact' element={<Contact />} />
-              <Route path='/projects/avengineers' element={<Avengineers />} />
-              <Route path='/projects/blazzi' element={<Blazzi />} />
-              <Route path='/projects/todoTemplate' element={<TodoTemplate />} />
-              <Route path='/projects/colorpalette' element={<ColorPalette />} />
-              <Route path='/projects/set' element={<Set />} />
-              <Route path='/projects/recipe' element={<Recipe />} />
-              <Route path='/projects/SetDemo' element={<SetDemo />} />
-              <Route path='/projects/RecipeDemo' element={<RecipeDemo />} />
-              <Route path='/projects/TodoTemplateDemo' element={<TodoTemplateDemo />} />
-            </Routes>
-          </ParallaxProvider>
-        </div>
-      </Router>
-    </ThemeProvider>
+    <Router>
+      <div className="App">
+        <ParallaxProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path='/projects' element={<Projects />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/projects/avengineers' element={<Avengineers />} />
+            <Route path='/projects/blazzi' element={<Blazzi />} />
+            <Route path='/projects/todoTemplate' element={<TodoTemplate />} />
+            <Route path='/projects/colorpalette' element={<ColorPalette />} />
+            <Route path='/projects/set' element={<Set />} />
+            <Route path='/projects/recipe' element={<Recipe />} />
+            <Route path='/projects/SetDemo' element={<SetDemo />} />
+            <Route path='/projects/RecipeDemo' element={<RecipeDemo />} />
+            <Route path='/projects/TodoTemplateDemo' element={<TodoTemplateDemo />} />
+          </Routes>
+        </ParallaxProvider>
+      </div>
+    </Router>
   );
 }
 
