@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { ThemeProvider } from './ThemeContext';
+import ReactGA from 'react-ga';
 import Home from './Pages/Home';
 import Projects from './Pages/Projects';
 import About from './Pages/About';
@@ -17,8 +18,16 @@ import RecipeDemo from './Pages/Projects/ProjectDemos/RecipeDemo';
 import TodoTemplate from './Pages/Projects/TodoTemplate';
 import TodoTemplateDemo from './Pages/Projects/ProjectDemos/TodoTemplateDemo';
 import './CSS/Theme.css';
+const TRACKING_ID = "G-2XQ43TL3CR";
+
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   return (
     <ThemeProvider>
       <Router>
