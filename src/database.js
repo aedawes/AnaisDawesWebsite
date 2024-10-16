@@ -13,6 +13,12 @@ function listOfProjects() {
             description: 'An app designed and built for new estheticians to be able to build a client base and for clients to filter for individual estheticians.'
         },
         {
+            image: '/PortfolioThumbnail.png',
+            path: '/projects/portfolio',
+            name: 'Portfolio Site',
+            description: 'This very site that was built to showcase my skills and abilities as a frontend engineer. Focused on React and AWS.'
+        },
+        {
             image: '/SetThumbnail.png',
             path: '/projects/set',
             name: 'Game of Set',

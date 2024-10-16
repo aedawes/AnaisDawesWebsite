@@ -48,7 +48,7 @@ function Footer() {
     return (
         <div className={isSmallWindow ? 'footer footerSmall' : 'footer'}>
             {!isSmallWindow && (
-                <h1 className='currentlyText'>Currently: Learning Next.js with Typescript</h1>
+                <h1 className='currentlyText'>Currently:  Volunteering for Blazzi to create their company website</h1>
             )}
             <div className={isSmallWindow ? 'footerLinks footerSmall' : 'footerLinks'}>
                 <button onClick={() => handleExternalLink(mediumUrl)}>

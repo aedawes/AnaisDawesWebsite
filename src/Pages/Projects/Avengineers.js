@@ -24,6 +24,7 @@ function Avengineers() {
             {loading ? <LoadingModal /> :
                 <Project
                     link={null}
+                    isNDA={true}
                     title='Avengineers'
                     subtitle='Capstone project sponsered by Marvel and Disney StudioLAB'
                     image={image}

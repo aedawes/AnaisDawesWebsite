@@ -5,7 +5,6 @@ import '../CSS/Navbar.css';
 
 function NavBar() {
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState('');
 
     useEffect(() => {
@@ -23,10 +22,6 @@ function NavBar() {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
-
-    const toggle = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
 
     const handleItemClick = (itemName) => {
         setSelectedItem(itemName);
