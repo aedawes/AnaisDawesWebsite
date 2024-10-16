@@ -8,6 +8,7 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Avengineers from './Pages/Projects/Avengineers';
 import Blazzi from './Pages/Projects/Blazzi';
+import Portfolio from './Pages/Projects/Portfolio';
 import ColorPalette from './Pages/Projects/ColorPalette';
 import Set from './Pages/Projects/Set';
 import Recipe from './Pages/Projects/Recipe';
@@ -30,6 +31,7 @@ function App() {
               <Route path='/contact' element={<Contact />} />
               <Route path='/projects/avengineers' element={<Avengineers />} />
               <Route path='/projects/blazzi' element={<Blazzi />} />
+              <Route path='/projects/portfolio' element={<Portfolio />} />
               <Route path='/projects/todoTemplate' element={<TodoTemplate />} />
               <Route path='/projects/colorpalette' element={<ColorPalette />} />
               <Route path='/projects/set' element={<Set />} />
