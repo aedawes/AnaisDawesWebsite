@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
-import { ThemeProvider } from './ThemeContext';
 import Home from './Pages/Home';
 import Projects from './Pages/Projects';
 import About from './Pages/About';

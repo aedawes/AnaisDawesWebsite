@@ -5,14 +5,17 @@ import App from './App';
 import customTheme from './theme';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react'
+import { ThemeProvider } from './ThemeContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ChakraProvider theme={customTheme}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </ChakraProvider>
+  <ThemeProvider>
+    <ChakraProvider theme={customTheme}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ChakraProvider>
+  </ThemeProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
